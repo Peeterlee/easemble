@@ -1,0 +1,14 @@
+@import './SubMenu/SubMenu.scss';
+
+.menu{
+    color:white;
+    padding:5px 0px 7px 30px;
+    margin: 10px 0 10px 0;
+    display:flex;
+    align-items: center;
+    font-family:'TTCommons-Regular';
+}
+
+.menu:hover{
+    background-color: #b08d90;
+}
