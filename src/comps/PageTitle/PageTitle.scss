@@ -1,0 +1,37 @@
+$bg: #F8F8F9;
+$mcol: #D78D8C;
+$hlight: #2AC3D8;
+$time: #C99483;
+$pghd: #616161;
+$plc: #BDBDBD;
+
+.TitleContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    hr {
+        width:25px;
+        height:0px;
+        background-color: $mcol;
+        margin:0px 20px;
+    }
+}
+.PageTitle {
+    font-family: "TT Commons Medium"!important;
+    text-transform: uppercase;
+    font-size: 25px;
+    color: $pghd;
+    font-family: sans-serif;
+}
+
+
+.title-msg{
+    font-family: "TT Commons"!important;
+color: $pghd;
+}
+
+.title-msg-user {
+    font-family: "TT Commons Bold"!important;
+    color:$mcol;
+}
