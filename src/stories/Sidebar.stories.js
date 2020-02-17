@@ -22,32 +22,32 @@ export const DefaultSidebar = () => {
 var menus=[
     {
         menu:"Home",
-        icon: <HomeOutlinedIcon style={{fontSize:"16pt", marginRight:"6pt"}} />,
+        icon: <HomeOutlinedIcon style={{fontSize:"16pt", marginRight:"6pt", marginTop:'4px'}} />,
         submenus:[]
     },
     {
         menu:"Account",
-        icon: <AccountCircleOutlinedIcon style={{fontSize:"16pt", marginRight:"6pt"}} />,
-        submenus:["Profile", "Billing & Payments", "Notifications", "Security", "Logout"]
+        icon: <AccountCircleOutlinedIcon style={{fontSize:"16pt", marginRight:"6pt", marginTop:'4px'}} />,
+        submenus:["Profile", "Billing&Payments", "Notifications", "Security", "Logout"]
     },
     {
         menu:"Albums",
-        icon: <PhotoAlbumOutlinedIcon style={{fontSize:"16pt", marginRight:"6pt"}} />,
+        icon: <PhotoAlbumOutlinedIcon style={{fontSize:"16pt", marginRight:"6pt", marginTop:'4px'}} />,
         submenus:[]
     },
     {
         menu:"Calender",
-        icon: <DateRangeOutlinedIcon style={{fontSize:"16pt", marginRight:"6pt"}} />,
+        icon: <DateRangeOutlinedIcon style={{fontSize:"16pt", marginRight:"6pt", marginTop:'4px'}} />,
         submenus:[]
     },
     {
         menu:"Analytics",
-        icon: <AssessmentOutlinedIcon style={{fontSize:"16pt", marginRight:"6pt"}} />,
+        icon: <AssessmentOutlinedIcon style={{fontSize:"16pt", marginRight:"6pt", marginTop:'4px'}} />,
         submenus:[]
     },
     {
         menu:"Settings",
-        icon: <SettingsOutlinedIcon style={{fontSize:"16pt", marginRight:"6pt"}} />,
+        icon: <SettingsOutlinedIcon style={{fontSize:"16pt", marginRight:"6pt", marginTop:'4px'}} />,
         submenus:[]
     }
 ];

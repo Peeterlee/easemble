@@ -1,20 +1,16 @@
 import React from 'react';
 import user from '../../assets/naomi.JPG';
 
-function UserAvatar({comp}){
-
-    var avaStyle = "avatar " + comp + "_avatar";
-    var avaPhoto = "userphoto " + comp + "_userphoto";
-
+function UserAvatar({class_name}){
     return(
-        <div className={avaStyle}>
-            <img alt="UserPhoto" src={user} className={avaPhoto} /> Love Note
+        <div className={class_name}>
+            <img alt="UserPhoto" src={user} className="userphoto" /> Love Note
         </div>
     )
 }
 
 UserAvatar.defaultProps={
-    comp:"default"
+    
 }
 
 export default UserAvatar;

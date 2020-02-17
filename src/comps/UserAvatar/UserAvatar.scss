@@ -1,25 +1,37 @@
-.avatar{
+.avatar_sidebar{
     display:flex;
     align-items: center;
-}
-
-.userphoto{
-    border-radius: 50%;
-    margin-right:10px;
-}
-
-.default_userphoto{
-    width:40px;
-    height:40px;
-}
-
-.sidebar_avatar{
+    font-size:24px;
     color:white;
-    font-size:30px;
+    justify-content:center;
+    margin-left:-6px;
+    font-family: "TT Commons Regular";
+
+    .userphoto{
+        width:30px;
+        height:30px;
+        border-radius:20px;
+        margin-right:10px;
+        border:1px solid white;
+    }
 }
 
-.sidebar_userphoto{
-    border:2px solid white;
-    width:40px;
-    height:40px;
+.avatar_post {
+    display:flex;
+    align-items: center;
+    font-size:15px;
+    margin-left:-2px;
+    font-family: "TT Commons Medium";
+
+    .userphoto{
+        width:20px;
+        height:20px;
+        border-radius:20px;
+        margin-right:10px;
+        border:1px solid white;
+    }
 }
+
+
+
+
