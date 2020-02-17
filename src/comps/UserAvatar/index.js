@@ -10,7 +10,7 @@ function UserAvatar({class_name}){
 }
 
 UserAvatar.defaultProps={
-    
+    class_name:"avatar_sidebar"
 }
 
 export default UserAvatar;
