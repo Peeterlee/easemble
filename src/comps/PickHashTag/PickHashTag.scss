@@ -1,0 +1,32 @@
+.pickhashtag_container {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:175px;
+    height:175px;
+    position: relative;
+    margin-right:15px;
+    margin-bottom:13px;
+    font-family: "TT Commons Regular";
+
+    .blend_div {
+        width:100%;
+        height:100%;
+        z-index: 1;
+        color:white;
+        display:flex;
+        justify-content:center;
+        align-items: flex-end;
+
+        .hashtag_name {
+            padding-bottom:10px;
+        }
+    }
+
+    .check_mark {
+        color:white;
+        position: absolute;
+        top:60px;
+        left:64px;
+        font-size:50px;
+    }
+}
