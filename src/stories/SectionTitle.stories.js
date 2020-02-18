@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.scss';
-import SectionTitle from '../comps/SectionTitle';
+import SectionTitle from '../comps/Section/SectionTitle';
 
 export default {
     title: 'Section Title',

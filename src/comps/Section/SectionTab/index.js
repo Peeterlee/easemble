@@ -6,7 +6,7 @@ function SectionTab({tabs}){
     return(
         <div id="tab-container">
             {tabs.map((o,i)=>{
-                return <SectionItem {...o} />
+                return <SectionItem key={i} {...o} />
             })}            
         </div>
     )
