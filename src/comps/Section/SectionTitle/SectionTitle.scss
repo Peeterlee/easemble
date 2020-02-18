@@ -14,11 +14,14 @@
 }
 
 .SectionButton {
-    font-size: 25px;
+    font-size: 20px;
     font-family: "TT Commons"!important;
     color: #58575B;
     cursor: pointer;
 
+
+    // if tab title = this, on click set active
+    // everything else, unactive
     
 
 }

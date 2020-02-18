@@ -1,24 +1,33 @@
 import React, {useState} from 'react';
 
-function SectionItem({tabTitle, type, }){
-
-    const [active, setActive] = useState(false);
+function SectionItem({tabTitle, active, type }){
 
     var tabClass= "";
-
     var TextClass = "tab-title"; var TextClassActive = "tab-title tab-title-active"
     var HashtagClass = "tab-title-hashtag"; var HashtagClassActive = "tab-title-hashtag tab-title-hashtag-active";
     
-    if (type === "text"){ tabClass= TextClass } else if (type === "btn"){ tabClass= HashtagClass };
-    if(type === "text" && active){ tabClass= TextClassActive } else if (type === "btn" && active){ tabClass= HashtagClassActive };
+    function setActive(){
+        
+            if (type === "text"){ tabClass= TextClass } else if (type === "btn"){ tabClass= HashtagClass };
+            if(type === "text" && active){ tabClass= TextClassActive } else if (type === "btn" && active){ tabClass= HashtagClassActive };
+    }
+    
+
+    setActive();
 
     function clickTab(){
-        setActive(!active);
+        console.log(tabTitle);
+        if (tabTitle === "Week"){
+            active=true;
+            tabClass="HashtagClassActive"
+        } else {
+            tabClass="HashtagClass"
+        }
     }
 
 
     return(
-    <div onClick={clickTab}  className={tabClass}>{tabTitle}</div>
+    <div onClick={()=>{clickTab()}}  className={tabClass}>{tabTitle}</div>
     )
 }
 

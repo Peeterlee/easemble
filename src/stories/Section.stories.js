@@ -19,3 +19,7 @@ export const Hashtags = () => {
 export const ScheduledPosts = () => {
   return <Section  sectionType="Scheduled Posts"/>
 }
+
+export const Tagged = () => {
+  return <Section  sectionType="Tagged"/>
+}
