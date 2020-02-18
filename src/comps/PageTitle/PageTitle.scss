@@ -1,19 +1,26 @@
 .TitleContainer {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    float: left;
 
     hr {
-        width:25px;
-        height:0px;
-        background-color: $mcol;
+        width:63px;
+        height:3px;
+        background-color: rgba(88, 87, 91, 0.2);
         margin:0px 20px;
+        border: 0;
     }
 }
+
+.greeting {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 .PageTitle {
-    font-family: "TT Commons Medium"!important;
+    font-family: "TT Commons DemiBold"!important;
     text-transform: uppercase;
-    font-size: 25px;
+    font-size: 45px;
     color: $pghd;
     font-family: sans-serif;
 }
@@ -21,10 +28,12 @@
 
 .title-msg{
     font-family: "TT Commons"!important;
-color: $pghd;
+    color: #58575b;
+    font-size: 35px;
 }
 
 .title-msg-user {
     font-family: "TT Commons Bold"!important;
     color:$mcol;
+    font-size: 35px;
 }

@@ -1,11 +1,12 @@
 import React from 'react';
 import '../App.scss';
-import SectionTab from '../comps/SectionTab/'
+import SectionTab from '../comps/Section/SectionTab'
 
 export default {
     title: 'Section Tabs',
     component: SectionTab,
   };
+
 
   export const Tagged = () => {
     return <SectionTab />

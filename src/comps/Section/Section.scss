@@ -1,0 +1,13 @@
+.SectionContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.PostsContainer {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    // background-color: green;
+}

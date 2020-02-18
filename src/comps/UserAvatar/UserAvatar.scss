@@ -19,9 +19,27 @@
 .avatar_post {
     display:flex;
     align-items: center;
-    font-size:15px;
+    font-size:12px;
+    color: #636363;
     margin-left:-2px;
-    font-family: "TT Commons Medium";
+    font-family: "TT Commons";
+
+    .userphoto{
+        width:20px;
+        height:20px;
+        border-radius:20px;
+        margin-right:10px;
+        border:1px solid white;
+    }
+}
+
+
+.hashtag_post {
+    display:flex;
+    align-items: center;
+    font-size:15px;
+    color: white;
+    font-family: "TT Commons"!important;
 
     .userphoto{
         width:20px;
