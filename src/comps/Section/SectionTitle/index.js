@@ -3,7 +3,7 @@ import React from 'react';
 function SectionTitle({title, buttonTitle}){
 
     return(
-        <div className='TitleContainer'>
+        <div className='SectionTitleContainer'>
             <p className="SectionTitle">{title}</p>
             <p className="SectionButton">{buttonTitle}</p>
         </div>

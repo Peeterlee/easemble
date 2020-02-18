@@ -8,6 +8,14 @@ export default {
     component: Section,
   };
 
-  export const ScheduledPosts = () => {
-    return <Section />
+  export const Mentions = () => {
+    return <Section sectionType="Mentions"/>
+}
+
+export const Hashtags = () => {
+  return <Section  sectionType="Hashtags"/>
+}
+
+export const ScheduledPosts = () => {
+  return <Section  sectionType="Scheduled Posts"/>
 }

@@ -1,30 +1,34 @@
 .tab-title {
     cursor: pointer;
-    color: $plc;
-    font-family: "TT Commons Light";
+    color: #939393;
+    font-family: "TT Commons"!important;
     font-weight: 500;
+    font-size: 23px;
     padding: 5px 10px;
     margin-right: 35px;
     transition: all .3s ease;
-    border-bottom: 2px solid rgba(107, 212, 226, 0);
+    border-bottom: 3px solid rgba(107, 212, 226, 0);
 }
 
 
 .tab-title-active, .tab-title:hover  {
     color: $hlight;
-    border-bottom: 2px solid $hlight;
+    border-bottom: 3px solid $hlight;
 }
 
 
 .tab-title-hashtag{
     cursor: pointer;
     width:auto;
-    padding:8px 10px;
+    display: flex;
+    align-items: center;
+    height:44px;
+    padding:0px 15px;
     margin-right: 35px;
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: white;
     font-family: 'TT Commons';
-    font-size: 16px;
+    font-size: 23px;
     color:#939393;
     box-shadow: 1px 2px 3px 0.1px rgba(0,0,0,0.12);
     -webkit-box-shadow: 1px 2px 3px 0.1px rgba(0,0,0,0.12);

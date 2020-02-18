@@ -25,6 +25,7 @@ function SectionItem({tabTitle, type, }){
 SectionItem.defaultProps = {
     tabTitle:"Default Title",
     type:"text",
+    active:false
 };
 
 export default SectionItem;

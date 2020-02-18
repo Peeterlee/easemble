@@ -1,20 +1,17 @@
 import React from 'react';
-import user from '../../assets/naomi.JPG';
 
-function UserAvatar({comp}){
-
-    var avaStyle = "avatar " + comp + "_avatar";
-    var avaPhoto = "userphoto " + comp + "_userphoto";
-
+function UserAvatar({class_name, user_icon, acc_name}){
     return(
-        <div className={avaStyle}>
-            <img alt="UserPhoto" src={user} className={avaPhoto} /> Love Note
+        <div className={class_name}>
+            <img alt="UserPhoto" src={user_icon} className="userphoto" /> {acc_name}
         </div>
     )
 }
 
 UserAvatar.defaultProps={
-    comp:"default"
+    user_icon: "https://iubmb.org/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png",
+    class_name:"avatar_sidebar",
+    acc_name:"Love Note"
 }
 
 export default UserAvatar;

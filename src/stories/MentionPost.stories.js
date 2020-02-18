@@ -1,6 +1,7 @@
 import React from 'react';
-import MentionPost from '../comps/MentionPost';
 import '../App.scss';
+import MentionPost from '../comps/MentionPost';
+
 
 export default {
     title:"MentionPost",

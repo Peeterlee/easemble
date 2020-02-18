@@ -1,11 +1,33 @@
 import React from 'react';
+import UserAvatar from '../UserAvatar';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 
-function MentionPost(){
+
+function MentionPost({post_img, user_icon, acc_name, post_desc}){
     return(
-        <div>
-            <img alt="img1" src="https://junebugweddings.com/wedding-blog/wp-content/uploads/2019/08/mid-century-mercury-hall-wedding-with-southwestern-influence-and-austin-texas-vibes-gloria-goode-photography-41.jpg" />    
+        <div className="mentionpost">
+            <img alt="img1" src={post_img} /> 
+            
+            <div className="mention_content">
+                <div style={{marginBottom:'10px'}}>
+                <UserAvatar class_name="avatar_post" acc_name={acc_name} user_icon={user_icon} />
+                </div>
+                {post_desc}
+                <div className="like_comment">
+                    <FavoriteIcon color="secondary" />
+                    <ChatBubbleOutlineIcon />
+                </div>
+            </div>   
         </div>
     )
 }
+
+MentionPost.defaultProps = {
+    acc_name:"username",
+    user_icon:"https://iubmb.org/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png",
+    post_img:"https://www.okea.org/wp-content/uploads/2019/10/placeholder.png",
+    post_desc:'default message here',
+};
 
 export default MentionPost;
