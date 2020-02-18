@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SectionTitle({title,}){
+function SectionTitle({title}){
 
     return(
         <div className='TitleContainer'>
