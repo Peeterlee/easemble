@@ -1,0 +1,92 @@
+$res: 200px;
+
+.sched_post_cont{
+    height: $res+50px;
+    width: $res;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    margin-right: 15px;
+
+    box-shadow: 1px 2px 3px 0.1px rgba(0,0,0,0.12);
+    -webkit-box-shadow: 1px 2px 3px 0.1px rgba(0,0,0,0.12);
+    -moz-box-shadow: 1px 2px 3px 0.1px rgba(0,0,0,0.12);
+    cursor:pointer;
+
+}
+
+.img_cont {
+    flex:3;
+    width: $res;
+    height: $res;
+
+    img {
+        width:$res;
+        height:$res;
+        object-fit:cover;
+    }
+}
+
+.time_cont {
+    // background-color: green;
+    flex:1;
+    display: flex;
+    padding-left: 15px;
+    align-items: center;
+    p {
+        margin: 0;
+        font-size: 20px;
+        font-family: 'TT Commons';
+    }
+}
+
+.time_current {
+    color: #C99483;
+}
+
+.time_past {
+    color:#BDBDBD;
+}
+
+// OVERLAY
+
+.sched_overlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    display: flex;
+    width: $res;
+    height: $res;
+}
+
+
+.dateCont {
+    flex:4;
+    padding:15px;
+
+    .p_day {
+        margin: 0;
+        font-family: 'TT Commons Medium';
+        font-size: 20px;
+        color: white;
+    }
+    
+    .p_date {
+        margin: 0;
+        font-family: 'TT Commons';
+        font-size: 15px;
+        color:white;
+    }
+    
+}
+
+.carouselCont {
+    flex:1;
+    display: flex;
+    padding:15px;
+    justify-content: center;
+    img {
+        height:30px;
+        width: 30px;
+    }
+}

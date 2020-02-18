@@ -1,6 +1,8 @@
 import React from 'react';
 import Sidebar from '../../comps/Sidebar';
-import '../../App.scss';
+// import '../../App.scss';
+
+import Section from '../../comps/Section';
 
 //icons
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
@@ -31,7 +33,7 @@ function Dashboard(){
             submenus:[]
         },
         {
-            menu:"Calender",
+            menu:"Calendar",
             icon: <DateRangeOutlinedIcon  />,
             submenus:[]
         },
@@ -49,9 +51,15 @@ function Dashboard(){
 
     return(
         <div className="dash_container">
+            <div className="sidebar-cont">
             <Sidebar menus={menus}/>
-            <div classname="dash_main_sect">
-                <PageTitle />
+            </div>
+            <div className="dash_main_sect">
+                <PageTitle title="home" message="Good Afternoon" user="Love Note" />
+                <Section sectionType="Scheduled Posts"/>
+                <Section sectionType="Hashtags"/>
+                <Section sectionType="Tagged"/>
+                <Section sectionType="Mentions"/>
             </div>
 
         </div>

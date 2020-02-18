@@ -1,8 +1,13 @@
 .dash_container{
+    height: auto;
     display: flex;
-
+    flex:1;
+    // background-color: green;
 }
 
 .dash_main_sect {
 display: flex;
+flex-grow: inherit;
+flex-direction: column;
+padding: 50px 75px 0px 75px;
 }

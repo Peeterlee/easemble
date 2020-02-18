@@ -1,7 +1,10 @@
 .TitleContainer {
     display: flex;
     flex-direction: row;
+    align-items: center;
     float: left;
+    height:75px;
+    // background-color: lightblue;
 
     hr {
         width:63px;

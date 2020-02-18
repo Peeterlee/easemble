@@ -79,6 +79,13 @@ $res: 200px;
     border: 1px solid #F4F3F0;
     box-sizing: border-box;
     border-radius: 5px;
+    transition: 0.2s ease all;
+}
+
+.post_button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    
+
 }
 
 
