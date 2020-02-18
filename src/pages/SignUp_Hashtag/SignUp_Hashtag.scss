@@ -1,0 +1,27 @@
+.signup_hashtag_container {
+    flex:1;
+    padding: 39px 0 0 43px;
+}
+
+.signup_hashtag_content {
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.recommended_text {
+    color:#ACACAC;
+    font-size: 22px;
+    font-family: "TT Commons Regular";
+    margin-bottom: 17px;
+}
+
+.recommended_pics {
+    display:flex;
+    flex-direction:column;
+}
+
+.pics_row {
+    display:flex;
+    flex-direction:row;
+}
