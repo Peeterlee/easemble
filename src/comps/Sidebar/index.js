@@ -6,9 +6,7 @@ import Logo from '../Logo';
 function Sidebar({menus}){
     return(
         <div className="sidebar">
-            <div style={{paddingTop:'60px', paddingBottom:'60px'}}>
-            <Logo color="#F9F9F9" justifycontent="center" />
-            </div>
+            <Logo color="#F9F9F9" justifycontent="center" margintop="60px" marginbottom="60px" />
             <div style={{paddingBottom:'30px'}}>
             <UserAvatar class_name="avatar_sidebar" />
             </div>

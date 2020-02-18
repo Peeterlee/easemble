@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Logo({color, justifycontent}){
+function Logo({color, justifycontent, marginbottom, margintop}){
 
     return(
-        <div className="logo_container" style={{color:color, justifyContent:justifycontent}}>
+        <div className="logo_container" style={{color:color, justifyContent:justifycontent, marginBottom:marginbottom, marginTop:margintop}}>
             easemble
         </div>
     )
@@ -11,7 +11,9 @@ function Logo({color, justifycontent}){
 
 Logo.defaultProps = {
     color:'black',
-    justifycontent:'left'
+    justifycontent:'left',
+    marginbottom:0,
+    marginTop:0
 };
 
 export default Logo;
