@@ -2,12 +2,15 @@
 
 .menu{
     color:white;
-    padding:5px 0px 7px 30px;
     margin: 10px 0 10px 0;
+    padding:0px 10px;
     display:flex;
     align-items: center;
-    font-family: "TT Commons Regular";
+    height: 40px;
+    // background-color: green;
+    font-family: "TT Commons";
     font-size:20px;
+    cursor: pointer;
 }
 
 .menu:hover{

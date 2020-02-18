@@ -44,7 +44,7 @@ function Menu({menu, icon, submenus}){
 
 Menu.defaultProps = {
     menu:"Default Menu",
-    icon:<HelpOutlineIcon style={{fontSize:"16pt", marginRight:"6pt"}} />,
+    icon:<HelpOutlineIcon />,
     submenus:["default sub menu", "default sub menu"]
 }
 
