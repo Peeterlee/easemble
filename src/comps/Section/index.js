@@ -108,7 +108,7 @@ var posts = null;
     var schedPosts = [
       {
         postImg:'https://scontent-sea1-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/79913375_3471317989605885_5310435340422149328_n.jpg?_nc_ht=scontent-sea1-1.cdninstagram.com&_nc_cat=109&_nc_ohc=eHlLeygdvGcAX_33EUo&oh=98c97c28f21be144a29ca215e2d4d0df&oe=5EE944D9',
-        carousel:true,
+        carousel:false,
         isPosted:true,
         postTime:'11:30 AM',
         postDate:'January 27, 2020',
@@ -117,7 +117,7 @@ var posts = null;
 
       {
         postImg:'https://scontent-sea1-1.cdninstagram.com/v/t51.2885-15/e35/84600966_642236706522288_5211006554179347120_n.jpg?_nc_ht=scontent-sea1-1.cdninstagram.com&_nc_cat=100&_nc_ohc=LvtjzZDTJJAAX_lP4rZ&oh=6f7046ab59f7db66cf1af15970ad70fb&oe=5EFA5868',
-        carousel:true,
+        carousel:false,
         isPosted:false,
         postTime:'12:00 PM',
         postDate:'January 27, 2020',
