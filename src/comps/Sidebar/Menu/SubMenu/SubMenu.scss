@@ -1,13 +1,15 @@
 .submenu{
-    color:gray;
-    padding:5px 0px 7px 50px;
-    margin: 8px 0 8px 0;
+    transition: .2s all ease;
+    color:#BDBDBD;
+    padding:15px 0px 15px 35px;
+    cursor: pointer;
     display:flex;
     align-items: center;
     font-family: "TT Commons";
-    font-size:18px;
+    font-size:15px;
+    background-color: #4d4d4d;
 }
 
 .submenu:hover {
-    background-color:#515151;
+    color: #EBA2A1;
 }

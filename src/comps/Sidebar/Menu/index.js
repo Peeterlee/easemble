@@ -12,7 +12,7 @@ function Menu({menu, icon, submenus}){
 
     var arrow = null;
     var submenu = null;
-    if(menu === "Account" || menu === "Albums" || menu === "Settings"){
+    if(menu === "Account" || menu === "Albums" || menu === "Collected Media"){
         if(active === false){
             arrow = <ArrowDropDownOutlinedIcon />
         }else{

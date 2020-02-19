@@ -9,7 +9,7 @@ function Sidebar({menus}){
     return(
         <div className="sidebar">
             <Logo color="#F9F9F9" justifycontent="center" />
-            <div style={{ paddingTop:"60px", paddingBottom:'30px'}}>
+            <div style={{ paddingTop:"25px", paddingLeft:'10px', paddingBottom:'15px'}}>
             <UserAvatar class_name="avatar_sidebar" user_icon={icon} />
             </div>
             {menus.map((o,i)=>{

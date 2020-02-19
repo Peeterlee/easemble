@@ -1,17 +1,23 @@
 @import './SubMenu/SubMenu.scss';
 
 .menu{
+    transition: .2s all ease;
     color:white;
-    margin: 10px 0 10px 0;
-    padding:0px 10px;
+    padding:5px 10px;
     display:flex;
     justify-content: space-between;
     align-items: center;
     height: 40px;
     // background-color: green;
     font-family: "TT Commons";
-    font-size:20px;
+    font-size:15px;
     cursor: pointer;
+}
+
+.menuIcon {
+    height: 15px;
+    width: 15px;
+    margin-right: 10px;
 }
 
 .menu:hover{

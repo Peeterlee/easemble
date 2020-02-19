@@ -2,7 +2,6 @@ import React from 'react';
 import UserAvatar from '../UserAvatar';
 import SaveAltIcon from '@material-ui/icons/SaveAlt';
 
-
 function HashtagPost({className, hashtag_img, tagTitle, user_icon, acc_name, }){
     return(
         <div className="HashtagPostCont">
