@@ -155,7 +155,7 @@ var posts = null;
       },
       ]
 
-    ViewTitle = "View Calendar";
+    ViewTitle = "View All";
     var posts =  <div className="PostsContainer"> {tagged.map((o,i)=>{ return <HashtagPost key={i} {...o} /> })}  </div>;
   }
     
