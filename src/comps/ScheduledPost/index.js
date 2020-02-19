@@ -1,9 +1,10 @@
 import React from 'react';
+import CarouselImg from '../../assets/Icons/carousel.svg';
 
-
-function ScheduledPost({postImg, time, isPosted, postDate, postDay, carousel, carouselNum }){
+function ScheduledPost({postImg, postTime, isPosted, postDate, postDay, carousel, }){
     
     var timeStyle = "time_current";
+    var carouselClass = "showCarousel";
 
     if (isPosted === true) {
         timeStyle = "time_past";
@@ -11,6 +12,11 @@ function ScheduledPost({postImg, time, isPosted, postDate, postDay, carousel, ca
         timeStyle = "time_current";
     }
 
+    if (carousel === true ) {
+        carouselClass = "showCarousel"
+    } else {
+        carouselClass = "hideCarousel"
+    }
 
     return(
         <div className="sched_post_cont">
@@ -19,7 +25,7 @@ function ScheduledPost({postImg, time, isPosted, postDate, postDay, carousel, ca
                 <img alt="scheduled-post-img" src={postImg} />
             </div>
             <div className="time_cont">
-                <p className={timeStyle}>{time}</p>
+                <p className={timeStyle}>{postTime}</p>
             </div>
             
 
@@ -29,7 +35,7 @@ function ScheduledPost({postImg, time, isPosted, postDate, postDay, carousel, ca
                     <p className="p_date">{postDate}</p>
                 </div>
                 <div className="carouselCont">
-                    <img src="https://www.pngfind.com/pngs/m/56-560443_camera-icon-white-small-circle-hd-png-download.png" alt="carousel"></img>
+                    <img src={CarouselImg} className={carouselClass} alt="carousel"></img>
                 </div>
             </div>
 
@@ -41,11 +47,10 @@ function ScheduledPost({postImg, time, isPosted, postDate, postDay, carousel, ca
 
 
 ScheduledPost.defaultProps = {
-    postImg:'https://scontent-sea1-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/79913375_3471317989605885_5310435340422149328_n.jpg?_nc_ht=scontent-sea1-1.cdninstagram.com&_nc_cat=109&_nc_ohc=eHlLeygdvGcAX_33EUo&oh=98c97c28f21be144a29ca215e2d4d0df&oe=5EE944D9',
     carousel:false,
-    carouselNum:0,
-    time:'11:30 PM',
+    postTime:'11:30 AM',
     isPosted:false,
+    postImg:'https://www.okea.org/wp-content/uploads/2019/10/placeholder.png',
     postDate:'January 27, 2020',
     postDay:'Monday'
 }

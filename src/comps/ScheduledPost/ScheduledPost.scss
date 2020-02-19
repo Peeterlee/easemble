@@ -50,10 +50,15 @@ $res: 200px;
 
 // OVERLAY
 
+.sched_post_cont:hover  .sched_overlay{
+    opacity: 1;
+}
+
 .sched_overlay {
+    transition: .3s ease;
+    opacity: 0;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.4);
-
     display: flex;
     width: $res;
     height: $res;
@@ -86,7 +91,15 @@ $res: 200px;
     padding:15px;
     justify-content: center;
     img {
-        height:30px;
-        width: 30px;
+        height:19px;
+        width: 19px;
     }
+}
+
+.showCarousel {
+   display: block;
+}
+
+.hideCarousel {
+    display: none;
 }
