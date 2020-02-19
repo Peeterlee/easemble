@@ -14,10 +14,6 @@ function MentionPost({post_img, tagged_user, user_icon, acc_name, post_desc}){
                 <UserAvatar class_name="avatar_post" acc_name={acc_name} user_icon={user_icon} />
                 </div>
                 {post_desc} <span>{tagged_user}</span>
-                <div className="like_comment">
-                    <FavoriteIcon color="secondary" />
-                    <ChatBubbleOutlineIcon />
-                </div>
             </div>   
         </div>
     )

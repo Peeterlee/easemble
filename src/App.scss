@@ -12,8 +12,21 @@
 @import './comps/Section/SectionTab/SectionTab.scss';
 @import './comps/Logo/Logo.scss';
 @import './comps/PickHashTag/PickHashTag.scss';
+@import './comps/ScheduledPost/ScheduledPost.scss';
+
 @import './pages/SignUp_Hashtag/SignUp_Hashtag.scss';
+@import './pages/Dashboard/Dashboard.scss';
 
 .App {
     display: flex;
+    width:100vw;
+}
+
+
+body {
+    background-color: #f8f8f9;
+}
+
+.sidebar-cont {
+    background-color: #616161;
 }

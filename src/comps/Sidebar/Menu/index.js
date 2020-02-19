@@ -14,9 +14,9 @@ function Menu({menu, icon, submenus}){
     var submenu = null;
     if(menu === "Account" || menu === "Albums" || menu === "Settings"){
         if(active === false){
-            arrow = <ArrowDropDownOutlinedIcon style={{position:"absolute", right:"20pt"}} />
+            arrow = <ArrowDropDownOutlinedIcon />
         }else{
-            arrow = <ArrowDropUpOutlinedIcon style={{position:"absolute", right:"20pt"}} />
+            arrow = <ArrowDropUpOutlinedIcon />
             submenu = submenus.map((o,i)=>{
                 return <SubMenu submenu={o} />
             });
@@ -31,8 +31,11 @@ function Menu({menu, icon, submenus}){
     return(
         <div>
             <div className="menu" onClick={clickMenu}>
-                {icon}
-                {menu}
+                <div>
+                    {icon}
+                    {menu}
+                </div>
+                
                 {arrow}
             </div>
             <div>
@@ -44,7 +47,7 @@ function Menu({menu, icon, submenus}){
 
 Menu.defaultProps = {
     menu:"Default Menu",
-    icon:<HelpOutlineIcon style={{fontSize:"16pt", marginRight:"6pt"}} />,
+    icon:<HelpOutlineIcon />,
     submenus:["default sub menu", "default sub menu"]
 }
 

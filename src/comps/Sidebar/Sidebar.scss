@@ -1,9 +1,10 @@
 @import './Menu/Menu.scss';
 
 .sidebar{
+    padding-top: 60px;
     background-color: #616161;
-    position: fixed;
-    height:100%;
+    position: sticky;
+    // flex-grow: 1;
     width:200px;
     top:0;
     left:0;
