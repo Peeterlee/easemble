@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import sample2 from '../../assets/sample2.JPG';
 import DoneIcon from '@material-ui/icons/Done';
 
-function PickHashTag(){
+function PickHashTag({tag_img,hashtag}){
 
     const [checkStatus, SetcheckStatus] = useState(false);
     var showMark = null,
@@ -18,11 +18,16 @@ function PickHashTag(){
        
             
     return(
-        <div style={{backgroundImage:`url(${sample2})`}} className="pickhashtag_container" onClick={()=>{SetcheckStatus(!checkStatus)}}>
-            <div className="blend_div" style={{backgroundColor:bgop}}><div className="hashtag_name">#hashtag</div></div>
+        <div style={{backgroundImage:`url(${tag_img})`}} className="pickhashtag_container" onClick={()=>{SetcheckStatus(!checkStatus)}}>
+            <div className="blend_div" style={{backgroundColor:bgop}}><div className="hashtag_name">#{hashtag}</div></div>
             {showMark}
         </div>
     )
+}
+
+PickHashTag.defaultProps = {
+    tag_img:"https://www.okea.org/wp-content/uploads/2019/10/placeholder.png",
+    hashtag:'default'
 }
 
 export default PickHashTag;
