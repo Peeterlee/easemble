@@ -1,6 +1,16 @@
 .signup_hashtag_container {
     flex:1;
-    padding: 39px 0 0 43px;
+}
+
+.logo_container {
+    margin: 39px 0 0 43px; 
+}
+
+.signup_hashtag_recommended {
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    align-items:center;
 }
 
 .signup_hashtag_content {
@@ -14,11 +24,15 @@
     font-size: 22px;
     font-family: "TT Commons Regular";
     margin-bottom: 17px;
+    width:100%;
 }
 
 .recommended_pics {
     display:flex;
-    flex-direction:column;
+    flex-direction:row;
+    flex-wrap: wrap;
+    max-width: 1140px;
+    margin-bottom: 40px;
 }
 
 .pics_row {

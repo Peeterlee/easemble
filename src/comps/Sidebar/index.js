@@ -13,7 +13,7 @@ function Sidebar({menus}){
             <UserAvatar class_name="avatar_sidebar" user_icon={icon} />
             </div>
             {menus.map((o,i)=>{
-                return <Menu {...o} />
+                return <Menu key={i} {...o} />
             })}
         </div>
     )

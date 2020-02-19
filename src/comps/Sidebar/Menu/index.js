@@ -18,7 +18,7 @@ function Menu({menu, icon, submenus}){
         }else{
             arrow = <ArrowDropUpOutlinedIcon />
             submenu = submenus.map((o,i)=>{
-                return <SubMenu submenu={o} />
+                return <SubMenu key={i} submenu={o} />
             });
         }
        
