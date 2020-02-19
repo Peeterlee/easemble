@@ -6,7 +6,7 @@ import Dashboard from './pages/Dashboard';
 function App() {
   return (
     <div className="App">
-      <Dashboard />
+      <SignUp_Hashtag />
     </div>
   );
 }
