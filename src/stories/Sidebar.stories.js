@@ -3,12 +3,18 @@ import Sidebar from '../comps/Sidebar';
 import '../App.scss';
 
 //icons
-import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
-import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
-import PhotoAlbumOutlinedIcon from '@material-ui/icons/PhotoAlbumOutlined';
-import DateRangeOutlinedIcon from '@material-ui/icons/DateRangeOutlined';
-import AssessmentOutlinedIcon from '@material-ui/icons/AssessmentOutlined';
-import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
+
+// ICON IMPORTS
+import accountIcon from '../assets/Icons/account.svg';
+import albumsIcon from '../assets/Icons/album.svg';
+import analyticsIcon from '../assets/Icons/analytics.svg';
+import calendarIcon from '../assets/Icons/calendar.svg';
+import downloadIcon from '../assets/Icons/download.svg';
+import homeIcon from '../assets/Icons/home.svg';
+import postIcon from '../assets/Icons/post.svg';
+import settingsIcon from '../assets/Icons/settings.svg';
+///////////////
+
 
 export default {
     title:"Sidebar",
@@ -22,32 +28,37 @@ export const DefaultSidebar = () => {
 var menus=[
     {
         menu:"Home",
-        icon: <HomeOutlinedIcon style={{fontSize:"16pt", marginRight:"6pt", marginTop:'4px'}} />,
+        icon: <img src={homeIcon} alt="icon" className="menuIcon"/>,
         submenus:[]
     },
     {
         menu:"Account",
-        icon: <AccountCircleOutlinedIcon style={{fontSize:"16pt", marginRight:"6pt", marginTop:'4px'}} />,
-        submenus:["Profile", "Billing&Payments", "Notifications", "Security", "Logout"]
+        icon: <img src={accountIcon} alt="icon" className="menuIcon"/>,
+        submenus:["Profile", "Billing & Payments", "Notifications", "Security", "Logout"]
     },
     {
-        menu:"Albums",
-        icon: <PhotoAlbumOutlinedIcon style={{fontSize:"16pt", marginRight:"6pt", marginTop:'4px'}} />,
+        menu:"Collected Media",
+        icon: <img src={postIcon} alt="icon" className="menuIcon"/>,
         submenus:[]
     },
     {
-        menu:"Calender",
-        icon: <DateRangeOutlinedIcon style={{fontSize:"16pt", marginRight:"6pt", marginTop:'4px'}} />,
+        menu:"Media Library",
+        icon: <img src={albumsIcon} alt="icon" className="menuIcon"/>,
+        submenus:[]
+    },
+    {
+        menu:"Calendar",
+        icon: <img src={calendarIcon} alt="icon" className="menuIcon"/>,
         submenus:[]
     },
     {
         menu:"Analytics",
-        icon: <AssessmentOutlinedIcon style={{fontSize:"16pt", marginRight:"6pt", marginTop:'4px'}} />,
+        icon: <img src={analyticsIcon} alt="icon" className="menuIcon"/>,
         submenus:[]
     },
     {
         menu:"Settings",
-        icon: <SettingsOutlinedIcon style={{fontSize:"16pt", marginRight:"6pt", marginTop:'4px'}} />,
+        icon: <img src={settingsIcon} alt="icon" className="menuIcon"/>,
         submenus:[]
     }
 ];

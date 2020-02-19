@@ -1,0 +1,22 @@
+.addPostContainer {
+    width: 200px;
+    height: 250px;
+    background-color: #F4F4F4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.3s ease all;
+    box-shadow: 1px 2px 3px 0.1px rgba(0,0,0,0.12);
+    -webkit-box-shadow: 1px 2px 3px 0.1px rgba(0,0,0,0.12);
+    -moz-box-shadow: 1px 2px 3px 0.1px rgba(0,0,0,0.12);
+    cursor:pointer;
+}
+
+.addPostContainer:hover {
+    background-color: rgb(218, 218, 218);
+}
+
+.plusButton {
+    font-size: 50px;
+}

@@ -5,11 +5,18 @@ import SectionTitle from './SectionTitle';
 import MentionPost from '../MentionPost';
 import HashtagPost from '../HashtagPost';
 import ScheduledPost from '../ScheduledPost';
+import AddPost from '../AddPost';
+import SectionTabList from './SectionTabList';
 
 function Section({sectionType, ViewTitle,}){
 
+  var currentTab = null;
+  var tabs = null;
 
-var tabs = null;
+// Default Tabs for List
+  var tab1="Today";
+  var tab2="Week";
+  var tab3="Month";
 
 var posts = null;
 
@@ -46,44 +53,15 @@ var posts = null;
       },
       ]
 
-    var posts =  <div className="PostsContainer"> {mentions.map((o,i)=>{ return <MentionPost key={i} {...o} /> })}  </div>
+    var posts =  <div className="PostsContainer"> {mentions.map((o,i)=>{ return <MentionPost key={i} {...o} /> })}   </div>
 
-    var tabs = [
-      {
-        tabTitle:"Recent",
-        type:"text",
-        active:true
-      },
-      {
-        tabTitle:"Week",
-        type:"text",
-        active:false
-      },
-      {
-        tabTitle:"Month",
-        type:"text",
-        active:false
-      },
-    ]
+    var tab1="Recent";
+    var tab2="Week";
+    var tab3="Month";
+
   } 
   
   if (sectionType === "Hashtags"){
-    var hashtags = [
-      {
-        acc_name:"lovenotebride",
-        user_icon:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-19/s320x320/44830262_283764312257453_2342436053266202624_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_ohc=w55K5CRe9JEAX87YrEI&oh=e66b9e405182491672c9b64106f33aa4&oe=5F02941C",
-        hashtag_img:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/83937015_1249102005278774_3812475600512058709_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=cOBFL0aiv7UAX-hB-KA&oh=e804c20e0047531b5e9b2fecec00fe35&oe=5EDC473C",
-        tagTitle:'#lovenote',
-      },
-      {
-        acc_name:"lovenotebride",
-        user_icon:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-19/s320x320/44830262_283764312257453_2342436053266202624_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_ohc=w55K5CRe9JEAX87YrEI&oh=e66b9e405182491672c9b64106f33aa4&oe=5F02941C",
-        hashtag_img:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/84430626_180922499905377_22612103518161646_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=A6GusN9Y6GkAX8NknXO&oh=257d978533505e6469a4972d96992f07&oe=5EC56503",
-        tagTitle:'#lovenote',
-      },
-      ]
-
-    var posts =  <div className="PostsContainer"> {hashtags.map((o,i)=>{ return <HashtagPost key={i} {...o} /> })}  </div>;
 
     var tabs = [
       {
@@ -101,7 +79,25 @@ var posts = null;
         type:"btn",
         active:false
       },
-    ]
+    ];
+
+    var hashtags = [
+      {
+        acc_name:"lovenotebride",
+        user_icon:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-19/s320x320/44830262_283764312257453_2342436053266202624_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_ohc=w55K5CRe9JEAX87YrEI&oh=e66b9e405182491672c9b64106f33aa4&oe=5F02941C",
+        hashtag_img:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/83937015_1249102005278774_3812475600512058709_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=cOBFL0aiv7UAX-hB-KA&oh=e804c20e0047531b5e9b2fecec00fe35&oe=5EDC473C",
+        tagTitle:'#lovenote',
+      },
+      {
+        acc_name:"lovenotebride",
+        user_icon:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-19/s320x320/44830262_283764312257453_2342436053266202624_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_ohc=w55K5CRe9JEAX87YrEI&oh=e66b9e405182491672c9b64106f33aa4&oe=5F02941C",
+        hashtag_img:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/84430626_180922499905377_22612103518161646_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=A6GusN9Y6GkAX8NknXO&oh=257d978533505e6469a4972d96992f07&oe=5EC56503",
+        tagTitle:'#lovenote',
+      },
+      ]
+
+    var posts =  <div className="PostsContainer"> {hashtags.map((o,i)=>{ return <HashtagPost key={i} {...o} /> })}  </div>;
+    
   }
 
   if (sectionType === "Scheduled Posts"){
@@ -135,26 +131,8 @@ var posts = null;
       ]
 
     ViewTitle = "View Calendar";
-    var posts =  <div className="PostsContainer"> {schedPosts.map((o,i)=>{ return <ScheduledPost key={i} {...o} /> })}  </div>;
+    var posts =  <div className="PostsContainer"> {schedPosts.map((o,i)=>{ return <ScheduledPost key={i} {...o} /> })} <AddPost />  </div>;
 
-
-    var tabs = [
-      {
-        tabTitle:"Today",
-        type:"text",
-        active:true
-      },
-      {
-        tabTitle:"Week",
-        type:"text",
-        active:false
-      },
-      {
-        tabTitle:"Month",
-        type:"text",
-        active:false
-      },
-    ]
   }
 
   if (sectionType === "Tagged"){
@@ -179,31 +157,22 @@ var posts = null;
 
     ViewTitle = "View Calendar";
     var posts =  <div className="PostsContainer"> {tagged.map((o,i)=>{ return <HashtagPost key={i} {...o} /> })}  </div>;
-
-    var tabs = [
-      {
-        tabTitle:"Today",
-        type:"text",
-        active:true
-      },
-      {
-        tabTitle:"Week",
-        type:"text",
-        active:false
-      },
-      {
-        tabTitle:"Month",
-        type:"text",
-        active:false
-      },
-    ]
   }
     
+
+
+  if (sectionType === "Mentions" || sectionType === "Tagged" || sectionType === "Scheduled Posts"){
+    currentTab = <SectionTabList tabTitle1={tab1} tatabTitle2={tab2} tabTitle3={tab3} />;
+  } else {
+    currentTab = <SectionTab tabs={tabs}/>;
+  };
 
     return (
     <div className="SectionContainer">
         <SectionTitle title={sectionType} buttonTitle={ViewTitle}/>
-        <SectionTab tabs={tabs}/>
+        {currentTab}
+        {/* <SectionTab tabs={tabs}/> */}
+        {/* <SectionTabList tabTitle1={tab1} tatabTitle2={tab2} tabTitle3={tab3} /> */}
           {posts}
     </div>
 
