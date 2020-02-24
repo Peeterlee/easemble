@@ -3,8 +3,9 @@ import Logo from '../../comps/Logo';
 import PageTitle from '../../comps/PageTitle';
 import PickHashTag from '../../comps/PickHashTag';
 import Button from '../../comps/Button';
+import {connect} from 'react-redux';
 
-function SignUp_Hashtag(){
+function SignUp_Hashtag({hashtag_amount}){
 
     var pick_hashtag = [
         {
@@ -57,13 +58,24 @@ function SignUp_Hashtag(){
         }
     ]
 
+    var button_bgcolor = null,
+        button_txtcolor = null;
+
+    if(hashtag_amount === 3){
+        button_bgcolor = '#D78D8C';
+        button_txtcolor = 'white';
+    }else {
+        button_bgcolor = '#E0E0E0';
+        button_txtcolor = '#939393'
+    }
+
     return(
         <div className="signup_hashtag_container">
             <div className="logo_container">
                 <Logo color="#D78D8C" justifycontent="left" />
             </div>
             <div className="signup_hashtag_content">
-                <PageTitle />
+                <PageTitle title="welcome"  message="Lets get started by choosing hashtags you'd like to track. Pick 3 Hashtags (You can edit this later)" user="@Love Note" />
                 <div className="signup_hashtag_recommended">
                     <div className="recommended_text">Recommended for you</div>
                     <div className="recommended_pics">
@@ -73,11 +85,17 @@ function SignUp_Hashtag(){
                             })
                         }
                     </div>
-                    <Button text="Done" bgcolor="#E0E0E0" fontColor="#939393" radius="10px" padding="10px 130px 10px 130px" />
+                    <Button text="Done" bgcolor={button_bgcolor} fontColor={button_txtcolor} radius="10px" padding="10px 130px 10px 130px" />
                 </div>
             </div>
         </div>
     )
 }
 
-export default SignUp_Hashtag;
+const mapStateToProps = state => {
+    return {
+        hashtag_amount:state.hashtag_amount
+    }
+}
+
+export default connect(mapStateToProps)(SignUp_Hashtag);
