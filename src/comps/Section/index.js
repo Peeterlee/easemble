@@ -94,13 +94,54 @@ var posts = null;
         hashtag_img:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/84430626_180922499905377_22612103518161646_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=A6GusN9Y6GkAX8NknXO&oh=257d978533505e6469a4972d96992f07&oe=5EC56503",
         tagTitle:'#lovenote',
       },
+      {
+        acc_name:"lovenotebride",
+        user_icon:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-19/s320x320/44830262_283764312257453_2342436053266202624_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_ohc=w55K5CRe9JEAX87YrEI&oh=e66b9e405182491672c9b64106f33aa4&oe=5F02941C",
+        hashtag_img:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/83937015_1249102005278774_3812475600512058709_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=cOBFL0aiv7UAX-hB-KA&oh=e804c20e0047531b5e9b2fecec00fe35&oe=5EDC473C",
+        tagTitle:'#lovenote',
+      },
+      {
+        acc_name:"lovenotebride",
+        user_icon:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-19/s320x320/44830262_283764312257453_2342436053266202624_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_ohc=w55K5CRe9JEAX87YrEI&oh=e66b9e405182491672c9b64106f33aa4&oe=5F02941C",
+        hashtag_img:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/84430626_180922499905377_22612103518161646_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=A6GusN9Y6GkAX8NknXO&oh=257d978533505e6469a4972d96992f07&oe=5EC56503",
+        tagTitle:'#lovenote',
+      },
+      {
+        acc_name:"lovenotebride",
+        user_icon:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-19/s320x320/44830262_283764312257453_2342436053266202624_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_ohc=w55K5CRe9JEAX87YrEI&oh=e66b9e405182491672c9b64106f33aa4&oe=5F02941C",
+        hashtag_img:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/83937015_1249102005278774_3812475600512058709_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=cOBFL0aiv7UAX-hB-KA&oh=e804c20e0047531b5e9b2fecec00fe35&oe=5EDC473C",
+        tagTitle:'#lovenote',
+      },
+      {
+        acc_name:"lovenotebride",
+        user_icon:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-19/s320x320/44830262_283764312257453_2342436053266202624_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_ohc=w55K5CRe9JEAX87YrEI&oh=e66b9e405182491672c9b64106f33aa4&oe=5F02941C",
+        hashtag_img:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/84430626_180922499905377_22612103518161646_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=A6GusN9Y6GkAX8NknXO&oh=257d978533505e6469a4972d96992f07&oe=5EC56503",
+        tagTitle:'#lovenote',
+      },
+      {
+        acc_name:"lovenotebride",
+        user_icon:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-19/s320x320/44830262_283764312257453_2342436053266202624_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_ohc=w55K5CRe9JEAX87YrEI&oh=e66b9e405182491672c9b64106f33aa4&oe=5F02941C",
+        hashtag_img:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/83937015_1249102005278774_3812475600512058709_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=cOBFL0aiv7UAX-hB-KA&oh=e804c20e0047531b5e9b2fecec00fe35&oe=5EDC473C",
+        tagTitle:'#lovenote',
+      },
+      {
+        acc_name:"lovenotebride",
+        user_icon:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-19/s320x320/44830262_283764312257453_2342436053266202624_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_ohc=w55K5CRe9JEAX87YrEI&oh=e66b9e405182491672c9b64106f33aa4&oe=5F02941C",
+        hashtag_img:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/84430626_180922499905377_22612103518161646_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=A6GusN9Y6GkAX8NknXO&oh=257d978533505e6469a4972d96992f07&oe=5EC56503",
+        tagTitle:'#lovenote',
+      },
       ]
 
     var posts =  <div className="PostsContainer"> {hashtags.map((o,i)=>{ return <HashtagPost key={i} {...o} /> })}  </div>;
     
   }
 
-  if (sectionType === "Scheduled Posts"){
+  if (sectionType === "Posts"){
+
+    var tab1="Scheduled";
+    var tab2="Drafts";
+    var tab3="";
+
     var schedPosts = [
       {
         postImg:'https://scontent-sea1-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/79913375_3471317989605885_5310435340422149328_n.jpg?_nc_ht=scontent-sea1-1.cdninstagram.com&_nc_cat=109&_nc_ohc=eHlLeygdvGcAX_33EUo&oh=98c97c28f21be144a29ca215e2d4d0df&oe=5EE944D9',
@@ -130,7 +171,7 @@ var posts = null;
       },
       ]
 
-    ViewTitle = "View Calendar";
+    ViewTitle = "View All";
     var posts =  <div className="PostsContainer"> {schedPosts.map((o,i)=>{ return <ScheduledPost key={i} {...o} /> })} <AddPost />  </div>;
 
   }
@@ -161,18 +202,15 @@ var posts = null;
     
 
 
-  if (sectionType === "Mentions" || sectionType === "Tagged" || sectionType === "Scheduled Posts"){
-    currentTab = <SectionTabList tabTitle1={tab1} tatabTitle2={tab2} tabTitle3={tab3} />;
-  } else {
-    currentTab = <SectionTab tabs={tabs}/>;
+  if (sectionType === "Mentions" || sectionType === "Tagged" || sectionType === "Posts"){
+    currentTab = <SectionTabList tabTitle1={tab1} tabTitle2={tab2} tabTitle3={tab3} />;
+  } else { currentTab = <SectionTab tabs={tabs}/>;
   };
 
     return (
     <div className="SectionContainer">
         <SectionTitle title={sectionType} buttonTitle={ViewTitle}/>
         {currentTab}
-        {/* <SectionTab tabs={tabs}/> */}
-        {/* <SectionTabList tabTitle1={tab1} tatabTitle2={tab2} tabTitle3={tab3} /> */}
           {posts}
     </div>
 

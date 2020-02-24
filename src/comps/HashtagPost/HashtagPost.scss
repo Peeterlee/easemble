@@ -1,6 +1,7 @@
 $res: 200px;
 
 .HashtagPostCont {
+    position: relative;
     height: $res;
     width: $res;
     display: flex;
@@ -14,6 +15,10 @@ $res: 200px;
         height:$res;
         object-fit:cover;
     }
+
+    &.HashtagPostCont:not(:last-of-type) {
+        margin-right: 15px;
+      }
     
 }
 
@@ -25,7 +30,9 @@ $res: 200px;
     transition: .3s ease;
     opacity: 0;
     position: absolute;
-    display: flex;
+    left: 0;
+    top: 0;
+    display: inline-flex;
     height:$res;
     width: $res;
     flex-direction: column;
