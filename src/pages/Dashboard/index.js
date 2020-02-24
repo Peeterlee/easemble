@@ -62,14 +62,14 @@ function Dashboard(){
     return(
         <div className="dash_container">
 
-            {/* <div className="sidebar-cont"> */}
+            <div className="sidebar-cont">
             <Sidebar menus={menus}/>
-            {/* </div> */}
+            </div>
             
             <div className="main_cont">
                     <PageTitle title="home" message="Good Afternoon" user="Love Note" />
                     <Section sectionType="Posts"/>
-                    <Section sectionType="Hashtags"/>
+                    <Section sectionType="Hashtags" isSectionExpanded={true}/>
                     <Section sectionType="Tagged"/>
             </div>
 

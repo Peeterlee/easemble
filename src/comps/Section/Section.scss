@@ -6,6 +6,30 @@
     // background-color: lime;
 }
 
+.SectionTitleContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    width: auto;
+}
+
+.SectionTitle {
+    font-family: "TT Commons Medium"!important;
+    font-size: 28px;
+    color: #58575B;
+    font-family: sans-serif;
+    text-align: center;
+    cursor: default;
+}
+
+.SectionButton {
+    font-size: 20px;
+    font-family: "TT Commons"!important;
+    color: #58575B;
+    cursor: pointer;
+}
+
 .main_sect_cont {
     flex: 1;
     display: flex;
@@ -21,9 +45,12 @@
     width: auto;
     height:auto;
     margin-top: 25px;
-
     display: flex;
     flex-direction: row;
-    // flex-wrap: wrap;
+}
+
+.expanded {
+    flex-wrap: wrap;
     // background-color: green;
+    align-content: flex-start;
 }

@@ -1,14 +1,32 @@
 import React, {useState} from 'react';
 
 import SectionTab from './SectionTab';
-import SectionTitle from './SectionTitle';
 import MentionPost from '../MentionPost';
 import HashtagPost from '../HashtagPost';
 import ScheduledPost from '../ScheduledPost';
 import AddPost from '../AddPost';
 import SectionTabList from './SectionTabList';
 
-function Section({sectionType, ViewTitle,}){
+function Section({sectionType, buttonTitle, isSectionExpanded}){
+
+var buttonTitle = "View All"
+
+const [sectionExpand, setSectionExpand] = useState(false);
+
+var postClass = "PostsContainer";
+
+function clickViewButton() {
+  setSectionExpand(!sectionExpand);
+
+}
+
+if (sectionExpand === true ){
+  buttonTitle = "Hide All"
+  postClass = "PostsContainer expanded";
+} else {
+    buttonTitle = "View All"
+    postClass = "PostsContainer";
+}
 
   var currentTab = null;
   var tabs = null;
@@ -20,46 +38,46 @@ function Section({sectionType, ViewTitle,}){
 
 var posts = null;
 
-  if (sectionType === "Mentions"){
+  // if (sectionType === "Mentions"){
 
-    var mentions = [
-      {
-        acc_name:"naomiokadaa",
-        tagged_user:"@lovenotebride",
-        user_icon:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-19/s320x320/43659210_1316352208513783_6629538083031220224_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_ohc=N0F1A2mHOBMAX8wyNDm&oh=5d2c47ee25954745b968d71de95a7851&oe=5ECE7484",
-        post_desc:'Look at these shoes that Love Note Bride had on sale! Thank you ',
-        post_img:"https://junebugweddings.com/wedding-blog/wp-content/uploads/2019/08/mid-century-mercury-hall-wedding-with-southwestern-influence-and-austin-texas-vibes-gloria-goode-photography-41.jpg",
-      },
-      {
-        acc_name:"sshenis",
-        tagged_user:"@lovenotebride",
-        user_icon:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-19/s320x320/82333290_586110268910623_5726260440107843584_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_ohc=8_fG-7x9IEgAX8SNvWk&oh=24ac34c6cd2bafe988870049c6ba9c76&oe=5ECB89F9",
-        post_desc:'Thank you Love Note Bride for giving me my dream dress! You guys did a great job!',
-        post_img:"https://g.foolcdn.com/editorial/images/435376/wedding_gettyimages-498799284.jpg",
-      },
-      {
-        acc_name:"irvinalcira",
-        tagged_user:"@lovenotebride",
-        user_icon:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-19/s320x320/39938617_262278214396692_7641252861220749312_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_ohc=NJsmQIO1N3oAX_sMPyF&oh=9b738554e4a61709b5a9052da83e1313&oe=5EFC6B34",
-        post_desc:"I don't know what I love more... My wife or her dress from ",
-        post_img:"https://cdn.fstoppers.com/styles/full/s3/media/2018/03/29/where-to-price-wedding-photography.jpg",
-      },
-      {
-        acc_name:"br__peter",
-        tagged_user:"@lovenotebride",
-        user_icon:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-19/s320x320/49997674_608380376293844_133533569774518272_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_ohc=DSfeoG_TygEAX9_6UmK&oh=b3294016d2d4f1df8243fb7d2186bd5e&oe=5EC443F0",
-        post_desc:"",
-        post_img:"https://www.verblio.com/wp-content/uploads/2018/08/bad-wedding-photo.jpg",
-      },
-      ]
+  //   var mentions = [
+  //     {
+  //       acc_name:"naomiokadaa",
+  //       tagged_user:"@lovenotebride",
+  //       user_icon:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-19/s320x320/43659210_1316352208513783_6629538083031220224_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_ohc=N0F1A2mHOBMAX8wyNDm&oh=5d2c47ee25954745b968d71de95a7851&oe=5ECE7484",
+  //       post_desc:'Look at these shoes that Love Note Bride had on sale! Thank you ',
+  //       post_img:"https://junebugweddings.com/wedding-blog/wp-content/uploads/2019/08/mid-century-mercury-hall-wedding-with-southwestern-influence-and-austin-texas-vibes-gloria-goode-photography-41.jpg",
+  //     },
+  //     {
+  //       acc_name:"sshenis",
+  //       tagged_user:"@lovenotebride",
+  //       user_icon:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-19/s320x320/82333290_586110268910623_5726260440107843584_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_ohc=8_fG-7x9IEgAX8SNvWk&oh=24ac34c6cd2bafe988870049c6ba9c76&oe=5ECB89F9",
+  //       post_desc:'Thank you Love Note Bride for giving me my dream dress! You guys did a great job!',
+  //       post_img:"https://g.foolcdn.com/editorial/images/435376/wedding_gettyimages-498799284.jpg",
+  //     },
+  //     {
+  //       acc_name:"irvinalcira",
+  //       tagged_user:"@lovenotebride",
+  //       user_icon:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-19/s320x320/39938617_262278214396692_7641252861220749312_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_ohc=NJsmQIO1N3oAX_sMPyF&oh=9b738554e4a61709b5a9052da83e1313&oe=5EFC6B34",
+  //       post_desc:"I don't know what I love more... My wife or her dress from ",
+  //       post_img:"https://cdn.fstoppers.com/styles/full/s3/media/2018/03/29/where-to-price-wedding-photography.jpg",
+  //     },
+  //     {
+  //       acc_name:"br__peter",
+  //       tagged_user:"@lovenotebride",
+  //       user_icon:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-19/s320x320/49997674_608380376293844_133533569774518272_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_ohc=DSfeoG_TygEAX9_6UmK&oh=b3294016d2d4f1df8243fb7d2186bd5e&oe=5EC443F0",
+  //       post_desc:"",
+  //       post_img:"https://www.verblio.com/wp-content/uploads/2018/08/bad-wedding-photo.jpg",
+  //     },
+  //     ]
 
-    var posts =  <div className="PostsContainer"> {mentions.map((o,i)=>{ return <MentionPost key={i} {...o} /> })}   </div>
+  //   var posts =  <div className={postClass}> {mentions.map((o,i)=>{ return <MentionPost key={i} {...o} /> })}   </div>
 
-    var tab1="Recent";
-    var tab2="Week";
-    var tab3="Month";
+  //   var tab1="Recent";
+  //   var tab2="Week";
+  //   var tab3="Month";
 
-  } 
+  // } 
   
   if (sectionType === "Hashtags"){
 
@@ -132,7 +150,7 @@ var posts = null;
       },
       ]
 
-    var posts =  <div className="PostsContainer"> {hashtags.map((o,i)=>{ return <HashtagPost key={i} {...o} /> })}  </div>;
+    var posts =  <div className={postClass}> {hashtags.map((o,i)=>{ return <HashtagPost key={i} {...o} /> })}  </div>;
     
   }
 
@@ -171,8 +189,7 @@ var posts = null;
       },
       ]
 
-    ViewTitle = "View All";
-    var posts =  <div className="PostsContainer"> {schedPosts.map((o,i)=>{ return <ScheduledPost key={i} {...o} /> })} <AddPost />  </div>;
+    var posts =  <div className={postClass}> {schedPosts.map((o,i)=>{ return <ScheduledPost key={i} {...o} /> })} <AddPost />  </div>;
 
   }
 
@@ -196,30 +213,35 @@ var posts = null;
       },
       ]
 
-    ViewTitle = "View All";
-    var posts =  <div className="PostsContainer"> {tagged.map((o,i)=>{ return <HashtagPost key={i} {...o} /> })}  </div>;
+    var posts =  <div className={postClass}> {tagged.map((o,i)=>{ return <HashtagPost key={i} {...o} /> })}  </div>;
   }
     
-
-
   if (sectionType === "Mentions" || sectionType === "Tagged" || sectionType === "Posts"){
     currentTab = <SectionTabList tabTitle1={tab1} tabTitle2={tab2} tabTitle3={tab3} />;
   } else { currentTab = <SectionTab tabs={tabs}/>;
   };
 
+
     return (
     <div className="SectionContainer">
-        <SectionTitle title={sectionType} buttonTitle={ViewTitle}/>
+
+        <div className='SectionTitleContainer'>
+            <p className="SectionTitle">{sectionType}</p>
+            <p  onClick={clickViewButton} className="SectionButton" >{buttonTitle}</p>
+        </div>
+
         {currentTab}
           {posts}
     </div>
 
     )
-}
+
+  }
+
 
 Section.defaultProps = {
   sectionType:"Hashtags",
-  ViewTitle: "View All"
+  isSectionExpanded: false,
 
 };
 
