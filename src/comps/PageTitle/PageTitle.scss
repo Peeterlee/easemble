@@ -1,9 +1,8 @@
 .TitleContainer {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    float: left;
-    height:75px;
+    // float: left;
+    // height:75px;
     cursor: default;
     // background-color: lightblue;
 
@@ -33,7 +32,6 @@
 .title-msg{
     font-family: "TT Commons"!important;
     color: #58575b;
-    font-size: 35px;
 }
 
 .title-msg-user {
