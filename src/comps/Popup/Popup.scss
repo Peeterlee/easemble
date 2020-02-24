@@ -1,0 +1,81 @@
+.popup-container {
+    height:800px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.top-cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: white;
+    height: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);}
+.mid-cont {
+    flex:1;
+    padding: 15px;
+
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-cont {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    img {
+        height:auto;
+        width: 400px;
+        object-fit: fill;
+    }
+}
+
+.bottom-cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    height: 30px;
+    padding: 10px;
+    border-top: 1px solid #E5E5E5;
+}
+
+
+.popupBut {
+    cursor: pointer;
+    font-family: "TT Commons";
+    font-size: 18px;
+    color: #6C6C6C;
+}
+
+.exit {
+    color:#C5C5C5!important;
+}
+
+.edit {
+    color: #EBA2A1!important;
+}
+
+.popup-title {
+    cursor: pointer;
+    font-family: "TT Commons";
+    font-size: 18px;
+    color: #58575B;
+}
+
+
+.popup-desc {
+font-family: "Muli";
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 15px;
+
+color: #4D4D4D;
+
+}
