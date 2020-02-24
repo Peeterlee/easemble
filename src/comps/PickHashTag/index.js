@@ -1,8 +1,9 @@
 import React,{useState} from 'react';
-import sample2 from '../../assets/sample2.JPG';
 import DoneIcon from '@material-ui/icons/Done';
+import {PickedHashtag} from '../../redux/actions';
+import {connect} from 'react-redux';
 
-function PickHashTag({tag_img,hashtag}){
+function PickHashTag({tag_img,hashtag,PickedHashtag,hashtag_amount}){
 
     const [checkStatus, SetcheckStatus] = useState(false);
     var showMark = null,
@@ -14,11 +15,24 @@ function PickHashTag({tag_img,hashtag}){
     }else{
         showMark = null; 
         bgop = 'rgba(0,0,0,0.35)';
-    }
-       
+    } 
             
     return(
-        <div style={{backgroundImage:`url(${tag_img})`}} className="pickhashtag_container" onClick={()=>{SetcheckStatus(!checkStatus)}}>
+        <div style={{backgroundImage:`url(${tag_img})`}} className="pickhashtag_container" onClick={()=>{
+            if(hashtag_amount >= 3){
+                if(checkStatus === true){
+                    SetcheckStatus(!checkStatus);
+                    PickedHashtag('SUBTRACT')
+                }
+            }else{
+                SetcheckStatus(!checkStatus);
+                if(checkStatus === true){
+                    PickedHashtag('SUBTRACT')
+                }else{
+                    PickedHashtag('ADD')
+                }
+            }
+        }}>
             <div className="blend_div" style={{backgroundColor:bgop}}><div className="hashtag_name">#{hashtag}</div></div>
             {showMark}
         </div>
@@ -30,4 +44,10 @@ PickHashTag.defaultProps = {
     hashtag:'default'
 }
 
-export default PickHashTag;
+const mapStateToProps = state => {
+    return {
+        hashtag_amount:state.hashtag_amount
+    }
+}
+
+export default connect(mapStateToProps, {PickedHashtag})(PickHashTag);
