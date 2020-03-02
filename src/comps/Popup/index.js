@@ -1,8 +1,26 @@
 import React, {useState} from 'react';
 import UserAvatar from '../UserAvatar';
+import SectionTab from '../Section/SectionTab';
 
 function Popup({active, }){
 
+    var taggedpeoplebuttons = [
+        {
+          tabTitle:"@lovenote",
+          type:"tagged",
+          active:false
+        },
+        {
+          tabTitle:"@lovenotedress",
+          type:"tagged",
+          active:false
+        },
+        {
+          tabTitle:"@lovenotebabes",
+          type:"tagged",
+          active:false
+        }
+      ]
 
     return(
         <div className="popup-container">
@@ -21,6 +39,7 @@ function Popup({active, }){
                 </div>
                 <div className="tagged-cont">
                     <p className="popup-title">Tagged People</p>
+                    <SectionTab tabs={taggedpeoplebuttons} /> 
                 </div>
             </div>
             <div className="bottom-cont"> 
