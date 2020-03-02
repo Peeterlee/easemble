@@ -1,6 +1,7 @@
 $res: 200px;
 
 .sched_post_cont{
+    position: relative;
     height: $res+50px;
     width: $res;
     display: flex;
@@ -59,7 +60,7 @@ $res: 200px;
     opacity: 0;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.6);
-    display: flex;
+    display: inline-flex;
     width: $res;
     height: $res;
 }

@@ -19,6 +19,7 @@ function SectionItem({tabTitle, active, type }){
     else if (type === "tagged" && active){ tabClass= taggedClassActive};
 
 
+
     function clickTab(){
         console.log(tabTitle);
         if (tabTitle === "Week"){
@@ -29,7 +30,7 @@ function SectionItem({tabTitle, active, type }){
         }
     }
     return(
-    <div onClick={()=>{clickTab()}}  className={tabClass}>{tabTitle}</div>
+    <div onClick={()=>{clickTab()}}  className={tabClass}>{tabTitle} {deleteTagButton}</div>
     )
 }
 
