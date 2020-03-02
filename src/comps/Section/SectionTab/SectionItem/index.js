@@ -5,6 +5,7 @@ function SectionItem({tabTitle, active, type }){
     var tabClass= "";
     var TextClass = "tab-title"; var TextClassActive = "tab-title tab-title-active"
     var HashtagClass = "tab-title-hashtag"; var HashtagClassActive = "tab-title-hashtag tab-title-hashtag-active";
+    var deleteTagButton = null;
     
     function setActive(){
         
@@ -27,7 +28,7 @@ function SectionItem({tabTitle, active, type }){
 
 
     return(
-    <div onClick={()=>{clickTab()}}  className={tabClass}>{tabTitle}</div>
+    <div onClick={()=>{clickTab()}}  className={tabClass}>{tabTitle} {deleteTagButton}</div>
     )
 }
 

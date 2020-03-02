@@ -15,9 +15,12 @@
 @import './comps/ScheduledPost/ScheduledPost.scss';
 @import './comps/AddPost/AddPost.scss';
 @import './comps/Popup/Popup.scss';
+@import './comps/InputBox/InputBox.scss';
 
 @import './pages/SignUp_Hashtag/SignUp_Hashtag.scss';
 @import './pages/Dashboard/Dashboard.scss';
+@import './pages/Home/Home.scss';
+@import './pages/Hashtags/Hashtags.scss';
 
 .App {
     display: flex;

@@ -1,15 +1,9 @@
-.dash_container{
+.dash-container{
     display: flex;
 }
 
-.dash_main_sect {
-display: flex;
-}
-
-.main_cont {
+.dash-main-container{
     display: flex;
-    flex-direction: column;
-    margin-top: 50px;
-    margin-left: 50px;
-    width: 1400px;
+    width: 89vw;
+    justify-content: center;
 }
