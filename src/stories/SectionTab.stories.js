@@ -8,13 +8,13 @@ export default {
   };
 
 
-  export const Tagged = () => {
+  export const Period = () => {
     return <SectionTab />
 }
 
 
 
-var tagbuttons = [
+var hashtagbuttons = [
   {
     tabTitle:"#lovenote",
     type:"btn",
@@ -35,6 +35,30 @@ var tagbuttons = [
 
 export const Hashtags = () => {
   return <SectionTab
-    tabs={tagbuttons}
+    tabs={hashtagbuttons}
+  />
+}
+
+var taggedpeoplebuttons = [
+  {
+    tabTitle:"@lovenote",
+    type:"tagged",
+    active:false
+  },
+  {
+    tabTitle:"@lovenotedress",
+    type:"tagged",
+    active:false
+  },
+  {
+    tabTitle:"@lovenotebabes",
+    type:"tagged",
+    active:false
+  }
+]
+
+export const Tagged = () => {
+  return <SectionTab
+    tabs={taggedpeoplebuttons}
   />
 }

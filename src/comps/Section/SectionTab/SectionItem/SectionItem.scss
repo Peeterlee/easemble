@@ -26,17 +26,26 @@
     padding:0px 15px;
     margin-right: 20px;
     border-radius: 8px;
-    background-color: white;
     font-family: 'TT Commons';
     font-size: 20px;
-    color:#939393;
     box-shadow: 1px 2px 3px 0.1px rgba(0,0,0,0.12);
     -webkit-box-shadow: 1px 2px 3px 0.1px rgba(0,0,0,0.12);
     -moz-box-shadow: 1px 2px 3px 0.1px rgba(0,0,0,0.12);
     transition: all .3s ease;
 }
 
-.tab-title-hashtag-active, .tab-title-hashtag:hover {
+.dashboard{
+    background-color: white;
+    color:#939393;
+}
+
+.tagged {
+    background-color:#3F3F3F;
+    color:white;
+}
+
+.tab-title-hashtag-dashboard-active, .dashboard:hover {
     background-color: $hlight;
     color:white;
 }
+
