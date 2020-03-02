@@ -1,0 +1,45 @@
+.input-cont {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    
+    input {
+        display: flex;
+        background: #FFFFFF;
+        box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 8px 0px 0px 8px;
+        // top-left top-right bottom-right bottom-left
+        border: 0;
+        margin: 0;
+        font-family: 'TT Commons';
+        font-size: 18px;
+        padding-left: 25px;
+        width: 95%;
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    ::placeholder {
+        color: #BDBDBD;
+    }
+}
+
+.submit-btn {
+    width: 5%;
+    background: #FFFFFF;
+    box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 0px 8px 8px 0px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    
+    img {
+        height: 20px;
+        width: auto;
+        object-fit: fill;
+    }
+}
