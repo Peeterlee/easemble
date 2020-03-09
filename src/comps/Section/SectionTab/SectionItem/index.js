@@ -8,8 +8,7 @@ function SectionItem({tabTitle, active, type }){
     var HashtagClass = "tab-title-hashtag dashboard"; 
     var HashtagClassActive = "tab-title-hashtag tab-title-hashtag-dashboard-active";
     var taggedClass = 'tab-title-hashtag tagged';
-    var taggedClassActive = "tab-title-hashtag tab-title-hashtag-tagged-active";
-    var deleteTagButton = null;
+    var taggedClassActive = "tab-title-hashtag tab-title-hashtag-tagged-active"
             
     if (type === "text"){ tabClass= TextClass } 
     else if (type === "btn"){ tabClass= HashtagClass }
