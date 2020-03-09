@@ -30,7 +30,7 @@ function SectionItem({tabTitle, active, type }){
         }
     }
     return(
-    <div onClick={()=>{clickTab()}}  className={tabClass}>{tabTitle} {deleteTagButton}</div>
+    <div onClick={()=>{clickTab()}}  className={tabClass}>{tabTitle}</div>
     )
 }
 
