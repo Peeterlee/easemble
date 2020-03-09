@@ -1,8 +1,15 @@
 import React, {useState} from 'react';
 import UserAvatar from '../UserAvatar';
 import SectionTab from '../Section/SectionTab';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
+import Button from '../Button';
 
 function Popup({active, }){
+
+    const [savePopup, SetsavePopup] = useState(false);
+    const [selectedTo, SetselectedTo] = useState("general");
+    const [popupViewMode, SetpoopupViewMode] = useState("read")
 
     var taggedpeoplebuttons = [
         {
@@ -22,11 +29,30 @@ function Popup({active, }){
         }
       ]
 
+      const selectTo = event => {
+          SetselectedTo(event.target.value);
+      }
+
+      var saveToPopup = (savePopup === true) ? (
+        <div className="save-popup">
+            <div className="save-popup-title">Save to</div>
+            <Select 
+                displayEmpty
+                value={selectedTo}
+                className="save-option"
+            >
+                <MenuItem value="general">General</MenuItem>
+            </Select>
+            <Button text="Save" bgcolor="#EBA2A1" fontColor="white" padding="5px 0px 3px 0px" fontSize="20px" />
+            <div className="save-popup-text">saved to General!</div>
+        </div>
+      ) : null;
+
     return(
         <div className="popup-container">
             <div className="top-cont"> 
                 <UserAvatar class_name="avatar_popup" user_icon="https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-19/s320x320/39938617_262278214396692_7641252861220749312_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_ohc=0sDll4xP3ecAX8Pflxz&oh=5301c9b3ffbccdd314d116420743c3db&oe=5E85C434" acc_name="irvinalcira"/>
-                <p className="popupBut">Save</p>
+            <p className="popupBut" onClick={()=>{SetsavePopup(!savePopup)}}>Save</p>
             </div>
             <div className="mid-cont"> 
             <div className="img-cont">
@@ -49,6 +75,7 @@ function Popup({active, }){
 
             </div>
 
+            {saveToPopup}
         </div>
     )
 }

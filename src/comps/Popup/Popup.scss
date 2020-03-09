@@ -4,78 +4,114 @@
     display: flex;
     flex-direction: column;
     background-color: white;
-}
+    position: relative;
 
-.top-cont {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: white;
-    height: 30px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);}
-.mid-cont {
-    flex:1;
-    padding: 15px;
+    .top-cont {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        background-color: white;
+        height: 30px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);}
+    .mid-cont {
+        flex:1;
+        padding: 15px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .img-cont {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    
+        img {
+            height:auto;
+            width: 350px;
+            object-fit: fill;
+        }
+    }
+    
+    .bottom-cont {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: white;
+        height: 30px;
+        padding: 10px;
+        border-top: 1px solid #E5E5E5;
+    }
+    
+    
+    .popupBut {
+        cursor: pointer;
+        font-family: "TT Commons";
+        font-size: 18px;
+        color: #6C6C6C;
+    }
+    
+    .exit {
+        color:#C5C5C5!important;
+    }
+    
+    .edit {
+        color: #EBA2A1!important;
+    }
+    
+    .popup-title {
+        cursor: pointer;
+        font-family: "TT Commons";
+        font-size: 18px;
+        color: #58575B;
+        margin-top: 20px;
+    }
+    
+    
+    .popup-desc {
+        font-family: "Muli";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 15px;
+        color: #4D4D4D;
+    }
 
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-}
+    .save-popup {
+        position: absolute;
+        right: -165px;
+        width: 135px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 20px 10px 10px 10px;
+    }
 
-.img-cont {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    .save-popup-title {
+        width: 100%;
+        font-family: "TT Commons";
+        text-align: left;
+        margin-bottom: 10px;
+    }
+    
+    .save-option {
+        font-family: "Muli";
+        color: #58575B;
+        margin-bottom: 10px;
+    }
 
-    img {
-        height:auto;
-        width: 400px;
-        object-fit: fill;
+    .save-popup-button {
+        margin-bottom: 10px;
+    }
+
+    .save-popup-text {
+        margin-top:7px;
+        font-family: "TT Commons";
+        font-style: italic;
+        color: #58575B;
     }
 }
 
-.bottom-cont {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: white;
-    height: 30px;
-    padding: 10px;
-    border-top: 1px solid #E5E5E5;
-}
-
-
-.popupBut {
-    cursor: pointer;
-    font-family: "TT Commons";
-    font-size: 18px;
-    color: #6C6C6C;
-}
-
-.exit {
-    color:#C5C5C5!important;
-}
-
-.edit {
-    color: #EBA2A1!important;
-}
-
-.popup-title {
-    cursor: pointer;
-    font-family: "TT Commons";
-    font-size: 18px;
-    color: #58575B;
-}
-
-
-.popup-desc {
-font-family: "Muli";
-font-style: normal;
-font-weight: normal;
-font-size: 12px;
-line-height: 15px;
-
-color: #4D4D4D;
-
-}
