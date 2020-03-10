@@ -110,10 +110,11 @@ function Popup({active, }){
                 onClick={()=>(popupViewMode==="read") ? null : SetpoopupViewMode("read")}>
                 {leftButTxt}
             </p>
-            <p 
+            <p
                 className="popupBut edit" 
-                onClick={()=>(popupViewMode === 'read') ? SetpoopupViewMode('edit') : null}>
+                onClick={()=>(popupViewMode === 'read') ? SetpoopupViewMode('edit') : null} >
                 {rightButTxt}
+               
             </p>
 
             </div>
