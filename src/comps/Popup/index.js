@@ -98,7 +98,7 @@ function Popup({active, }){
             </div>
             <div className="mid-cont" style={{flexDirection:popup_container_flex}}> 
                 <div className="img-cont">
-                <img src="https://lh3.googleusercontent.com/proxy/BSCjv0m6S7Ai1urLMl9bTxJolMX3gU8vtw5GjzgF62r5o3X-ilZvmuNHFHMqUoPkXvkuZlWhPqkg4me5yRrUZtKnXhBoncnfMjM6h61LBJWJEtv5hy_dwPgjUpW2" alt="post image" style={{width:imgWidth, height:imgHeight}} />
+                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/img-3462-1-1576693070.jpg?crop=1.00xw:0.803xh;0,0.181xh&resize=640:*" alt="post image" style={{width:imgWidth, height:imgHeight}} />
                 </div>
                 {layout}
             </div>

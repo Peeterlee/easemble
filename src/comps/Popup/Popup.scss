@@ -80,7 +80,14 @@
     }
     
     .edit {
-        color: #EBA2A1!important;
+        color: #eba2a1!important;
+    }
+
+    .edit:active {
+        color: white!important;
+        background-color: #eba2a1;
+        padding: 5px;
+        border-radius: 5px;
     }
     
     .right-column {
