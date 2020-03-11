@@ -7,8 +7,8 @@ import InputBox from '../../comps/InputBox';
 import SectionTab from '../../comps/Section/SectionTab/';
 
 import HashtagPost from '../../comps/HashtagPost';
-import { HashtagTabs } from '../../comps/Section/SectionTab/HashtagTabs';
-import { HashtagPostObjects } from '../../comps/HashtagPost/HashtagPostObjects';
+import { HashtagTabs } from '../../data/HashtagTabs';
+import { HashtagPostData } from '../../data/HashtagPostData';
 
 function Hashtags() {
     return (
@@ -24,7 +24,7 @@ function Hashtags() {
             <div className="hashtags-main-container">
                     <div className="hashtags-content-container">
                         <div className="PostsContainer expanded"> 
-                            {HashtagPostObjects.map((o,i)=>{ return <HashtagPost key={i} {...o} /> })}  
+                            {HashtagPostData.map((o,i)=>{ return <HashtagPost key={i} {...o} /> })}  
                         </div>
                     </div>
             </div>
