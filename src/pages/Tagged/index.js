@@ -10,9 +10,8 @@ import { TaggedPostData } from '../../data/TaggedPostData';
 import LimitMessage from '../../comps/LimitMessage';
 import Spacer from '../../comps/Spacer';
 import SectionTabList from '../../comps/Section/SectionTabList';
-import { findByLabelText } from '@testing-library/react';
 
-function Tagged({}) {
+function Tagged({label}) {
 
 
     const [showLimit, setShowLimit] = useState(null);
@@ -23,6 +22,10 @@ function Tagged({}) {
             setDisplayTagged('none');
             setShowLimit( <div className="limitPopup"> <Spacer height="50px"/> <LimitMessage type="tagged"/></div>);
     }
+
+    function clickOther(){
+            setDisplayTagged('flex');
+            setShowLimit(null);}
     
     return (
         <div className="dash-main-container dash-s-container">
@@ -31,7 +34,7 @@ function Tagged({}) {
                 <PageTitle title="Tagged" />
                 <Spacer />
                 <div style={{width:'90%'}}>
-                <SectionTabList onClick={()=>{clickTab()}} />
+                <SectionTabList onClickMonth={()=>{clickTab()}} onClickElse={()=>{clickOther()}} />
                 </div>
 
             </div>

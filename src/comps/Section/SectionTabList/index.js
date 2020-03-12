@@ -46,7 +46,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function SectionTabList({tabTitle1, tabTitle2, tabTitle3, onClick,}) {
+function SectionTabList({tabTitle1, tabTitle2, tabTitle3, onClickElse, onClickMonth,}) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -58,9 +58,9 @@ function SectionTabList({tabTitle1, tabTitle2, tabTitle3, onClick,}) {
     <div className={classes.root}>
       <div className={classes.demo1}>
         <AntTabs value={value} onChange={handleChange} aria-label="ant example">
-          <AntTab label={tabTitle1}/>
-          <AntTab label={tabTitle2}/>
-          <AntTab label={tabTitle3} onClick={onClick}/>
+          <AntTab label={tabTitle1} onClick={onClickElse}/>
+          <AntTab label={tabTitle2} onClick={onClickElse}/>
+          <AntTab label={tabTitle3} onClick={onClickMonth}/>
         </AntTabs>
       </div>
     </div>
