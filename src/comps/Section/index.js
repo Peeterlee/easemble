@@ -10,12 +10,14 @@ import {HashtagTabs} from '../../data/HashtagTabs';
 import {HashtagPostData} from '../../data/HashtagPostData'
 import {ScheduledPostData} from '../../data/ScheduledPostData';
 import {TaggedPostData} from '../../data/TaggedPostData';
+import LimitMessage from '../LimitMessage';
 
 function Section({sectionType, buttonTitle, isSectionExpanded}){
 
 var buttonTitle = "View All"
 
 const [sectionExpand, setSectionExpand] = useState(false);
+
 
 var postClass = "PostsContainer";
 
@@ -59,16 +61,31 @@ var posts = null;
 
   }
 
+  const [TaggedPosts, setTaggedPosts] = useState(<div className={postClass}> {TaggedPostData.map((o,i)=>{ return <HashtagPost key={i} {...o} /> })}  </div>);
+
+
   if (sectionType === "Tagged"){
 
+    function displayLimit(){
+      setTaggedPosts(<div className={postClass} style={{display:"flex", justifyContent:"center"}}><LimitMessage type="tagged"/></div>)
+    }
+
+    function displayElse(){
+      setTaggedPosts(<div className={postClass}> {TaggedPostData.map((o,i)=>{ return <HashtagPost key={i} {...o} /> })}  </div>)
+    }
+
+    currentTab = <SectionTabList tabTitle1={tab1} tabTitle2={tab2} tabTitle3={tab3} onClickMonth={()=>{displayLimit()}} onClickElse={()=>{displayElse()}} />;
+
     var buttonTitle = "View Tagged"
-    var posts =  <div className={postClass}> {TaggedPostData.map((o,i)=>{ return <HashtagPost key={i} {...o} /> })}  </div>;
+    var posts = TaggedPosts;
   }
     
-  if (sectionType === "Mentions" || sectionType === "Tagged" || sectionType === "Posts"){
+  if (sectionType === "Mentions" || sectionType === "Posts"){
     currentTab = <SectionTabList tabTitle1={tab1} tabTitle2={tab2} tabTitle3={tab3} />;
-  } else { currentTab = <SectionTab tabs={HashtagTabs}/>;
+  } else if (sectionType === "Hashtags"){
+    currentTab = <SectionTab tabs={HashtagTabs}/>;
   };
+
 
 
     return (

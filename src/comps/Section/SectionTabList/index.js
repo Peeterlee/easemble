@@ -70,7 +70,7 @@ function SectionTabList({tabTitle1, tabTitle2, tabTitle3, onClickElse, onClickMo
 }
 
 SectionTabList.defaultProps = {
-    tabTitle1:'Day',
+    tabTitle1:'Today',
     tabTitle2:'Week',
     tabTitle3:'Month',
 }

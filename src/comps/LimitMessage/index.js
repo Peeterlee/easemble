@@ -27,7 +27,7 @@ function LimitMessage({title, message, type}){
     }
 
     return (
-        <div className="limitContainer" style={{display:limitContainerDisplay, flexDirection:buttonDirection}}>
+        <div className="limitContainer" style={{display:limitContainerDisplay, flexDirection:buttonDirection, height:'215px'}}>
             <div className="textContainer">
                 <h1>{title}</h1>
                 <div className="spacer"></div>
