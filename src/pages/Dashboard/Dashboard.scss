@@ -1,9 +1,48 @@
 .dash-container{
     display: flex;
+    min-height: 100vh;
 }
 
 .dash-main-container{
     display: flex;
     width: 89vw;
     justify-content: center;
+}
+
+.dash-s-container {
+    flex-direction: column;
+}
+
+.dash-s-main-container {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        width: 90%;
+        font-family: TT Commons;
+        font-weight: normal;
+        font-size: 35px;
+        color: #58575B;
+
+    }
+}
+
+.dash-header {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    height: auto;
+    width: 100%;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dash-content-container {
+    width: 90%;
+    display: flex;
+    padding-top: 0px;
 }

@@ -13,13 +13,13 @@ import Spacer from '../../comps/Spacer';
 function Hashtags({hashtagTitle}) {
     
     return (
-        <div className="dash-main-container hashtags-container">
+        <div className="dash-main-container dash-s-container">
 
-            <div className="hashtags-header">
+            <div className="dash-header">
                 <PageTitle title="Hashtags" />
-                <div className="spacer" style={{height:'60px'}}></div>
+                <Spacer />
                 <InputBox />
-                <div className="spacer" style={{height:'40px'}}></div>
+                <Spacer />
                 <SectionTab tabs={HashtagTabs} canDeleteTag="true" />
                 <Spacer />
 
@@ -27,11 +27,11 @@ function Hashtags({hashtagTitle}) {
             </div>
 
 
-            <div className="hashtags-main-container">
+            <div className="dash-s-main-container">
                 
                 <h1>{hashtagTitle}</h1>
 
-                    <div className="hashtags-content-container">
+                    <div className="dash-content-container">
                         <div className="PostsContainer expanded"> 
                             {HashtagPostData.map((o,i)=>{ return <HashtagPost key={i} {...o} /> })}  
                         </div>
