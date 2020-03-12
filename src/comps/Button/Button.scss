@@ -1,5 +1,44 @@
 .button_container{
     text-align: center;
     font-family: 'TT Commons';
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
+
+    img { 
+        margin-left:10px;
+    }
 }
+
+$limitButtonPadding: 8px 10px 8px 10px!important;
+
+#upgrade {  
+    padding: $limitButtonPadding;
+    font-size: 15px!important;
+    height: auto;
+    background-color: #EBA2A1!important;
+    color:white!important;
+    transition: 0.3s ease all;
+}
+
+#later {
+    padding: $limitButtonPadding;
+    font-size: 15px!important;
+    height: auto;
+    background-color:#BDBDBD!important;
+    color:white!important;
+    transition: 0.3s ease all;
+}
+
+#later:hover {
+    background-color: rgb(142, 142, 142)!important;
+}
+
+#upgrade:hover {
+    background-color: rgb(224, 136, 135)!important;
+}
+
+
+#upgrade:hover, #later:hover {
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.1);}

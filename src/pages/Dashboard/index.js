@@ -17,8 +17,8 @@ function Dashboard(){
             <Sidebar menus={menus}/>
             </div>
         
-            <Home />
-            {/* <Hashtags /> */}
+            {/* <Home /> */}
+            <Hashtags />
 
         </div>
     )
