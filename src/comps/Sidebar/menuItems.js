@@ -4,7 +4,6 @@ import accountIcon from '../../assets/Icons/account.svg';
 import albumsIcon from '../../assets/Icons/album.svg';
 import analyticsIcon from '../../assets/Icons/analytics.svg';
 import calendarIcon from '../../assets/Icons/calendar.svg';
-import downloadIcon from '../../assets/Icons/download.svg';
 import homeIcon from '../../assets/Icons/home.svg';
 import postIcon from '../../assets/Icons/post.svg';
 import settingsIcon from '../../assets/Icons/settings.svg';

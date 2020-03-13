@@ -1,81 +1,222 @@
 .popup-container {
-    height:900px;
-    width: 500px;
     display: flex;
     flex-direction: column;
     background-color: white;
-}
+    position: relative;
+    transition: ease-out 0.3s;
 
-.top-cont {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: white;
-    height: 30px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);}
-.mid-cont {
-    flex:1;
-    padding: 15px;
-
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-}
-
-.img-cont {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-
-    img {
-        height:auto;
-        width: 400px;
-        object-fit: fill;
+    .top-cont {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        background-color: white;
+        height: 30px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     }
+
+    .mid-cont {
+        flex:1;
+        padding: 15px;
+        height: 300px;
+        display: flex;
+        
+    }
+    
+    .img-cont {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    
+        img {
+            object-fit:cover;
+            object-position: center;
+        }
+    }
+
+    .schedule-cont {
+
+            .schedule-calendar {
+                width:95%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border: 1px solid #D6D6D6;
+                font-family: "Muli";
+                padding: 7 px 10px 7 px 10px;
+                font-size: 12px;
+            }
+    
+            .schedule-calendar:hover {
+                cursor: pointer;
+            }
+    
+            .calendarIcon {
+                width:15px;
+                height:15px;
+            }
+    }
+    
+    .bottom-cont {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: white;
+        height: 30px;
+        padding: 10px;
+        border-top: 1px solid #E5E5E5;
+    }
+    
+    
+    .popupBut {
+        cursor: pointer;
+        font-family: "TT Commons";
+        font-size: 18px;
+        color: #6C6C6C;
+    }
+    
+    .exit {
+        color:#C5C5C5!important;
+    }
+    
+    .edit {
+        color: #eba2a1!important;
+    }
+
+    .edit:active {
+        color: white!important;
+        background-color: #eba2a1;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    
+    .right-column {
+        
+        padding:0px 10px 0px 10px;
+        
+        .popup-title {
+            cursor: pointer;
+            font-family: "TT Commons";
+            font-size: 18px;
+            color: #58575B;
+            margin: 20px 0px 10px 0px;
+        }
+
+        .popup-title:hover {
+            cursor:default;
+        }
+        
+        
+        .popup-desc {
+            font-family: "Muli";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 15px;
+            color: #4D4D4D;
+            width:97%;
+            height:100px;
+            padding:10px;
+            resize:none;
+        }
+
+        textarea{
+            border:solid 1px rgb(211, 211, 211);
+            outline-color:rgb(211, 211, 211);
+        }
+
+    }
+    
+
+    .save-popup {
+        position: absolute;
+        right: -165px;
+        width: 135px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 20px 10px 10px 10px;
+    }
+
+    .save-popup-title {
+        width: 100%;
+        font-family: "TT Commons";
+        text-align: left;
+        margin-bottom: 10px;
+    }
+    
+    .save-option {
+        font-family: "Muli";
+        color: #58575B;
+        margin-bottom: 10px;
+    }
+
+    .save-popup-button {
+        margin-bottom: 10px;
+    }
+
+    .save-popup-text {
+        margin-top:7px;
+        font-family: "TT Commons";
+        font-style: italic;
+        color: #58575B;
+    }
+
+    .tagged-cont {
+
+        .tagged-people-input {
+            padding:10px;
+            width:97%;
+            height:20px;
+            color: rgba(147, 147, 147, 0.87);
+            margin-bottom: 15px;
+            border: 1px solid #D6D6D6;
+            font-family: "Muli";
+        }
+
+        .add-tagged-people {
+            padding-top:5px;
+            position: absolute;
+            width:27px;
+            height:23px;
+            text-align: center;
+            color:#383838;
+            top:2px;
+            right:-5px;
+            font-size:23px;
+        }
+
+        .add-tagged-people:hover {
+            cursor: pointer;
+        }
+    }
+
+    .schedule-cont {
+
+        .schedule-calendar {
+            width:97%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #D6D6D6;
+            font-family: "Muli";
+            padding: 10px 10px 10px 10px;
+            font-size: 12px;
+            margin-bottom:15px;
+        }
+
+        .schedule-calendar:hover {
+            cursor: pointer;
+        }
+
+        .calendarIcon {
+            width:15px;
+            height:15px;
+        }
 }
 
-.bottom-cont {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: white;
-    height: 30px;
-    padding: 10px;
-    border-top: 1px solid #E5E5E5;
+    
 }
 
-
-.popupBut {
-    cursor: pointer;
-    font-family: "TT Commons";
-    font-size: 18px;
-    color: #6C6C6C;
-}
-
-.exit {
-    color:#C5C5C5!important;
-}
-
-.edit {
-    color: #EBA2A1!important;
-}
-
-.popup-title {
-    cursor: pointer;
-    font-family: "TT Commons";
-    font-size: 18px;
-    color: #58575B;
-}
-
-
-.popup-desc {
-font-family: "Muli";
-font-style: normal;
-font-weight: normal;
-font-size: 12px;
-line-height: 15px;
-
-color: #4D4D4D;
-
-}

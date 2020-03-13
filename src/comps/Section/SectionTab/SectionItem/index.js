@@ -42,6 +42,7 @@ function SectionItem({tabTitle, canDelete, active, type }){
         {tabTitle} 
         <DeleteIcon style={{display:deleteTagButton}} className="deleteIcon"/>
     </div>
+
     )
 }
 
