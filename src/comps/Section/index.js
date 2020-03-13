@@ -66,7 +66,7 @@ var posts = null;
   if (sectionType === "Tagged"){
 
     function displayLimit(){
-      setTaggedPosts(<div className={postClass} style={{display:"flex", justifyContent:"center"}}><LimitMessage type="tagged"/></div>)
+      setTaggedPosts(<div className={postClass} style={{display:"flex", justifyContent:"center"}}><LimitMessage type="tagged" atHome={true}/></div>)
     }
 
     function displayElse(){

@@ -1,6 +1,7 @@
 import React from 'react';
 import Sidebar from '../../comps/Sidebar';
 
+
 import {menus} from '../../comps/Sidebar/menuItems';
 import Home from '../Home';
 import Hashtags from '../Hashtags';
@@ -18,9 +19,9 @@ function Dashboard(){
             <div className="sidebar-cont">
             <Sidebar menus={menus}/>
             </div>
-            {/* <Home /> */}
+            <Home />
              
-            <Hashtags />
+            {/* <Hashtags /> */}
             {/* <Tagged /> */}
 
         </div>

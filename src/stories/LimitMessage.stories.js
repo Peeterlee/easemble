@@ -10,3 +10,6 @@ export default {
 export const DefaultLimitMessage = () => {
     return <LimitMessage />
 }
+export const TaggedLimitMessageAtHome = () => {
+    return <LimitMessage type="tagged" atHome={true}/>
+}

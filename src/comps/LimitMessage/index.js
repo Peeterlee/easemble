@@ -2,11 +2,22 @@ import React, {useState} from 'react';
 import Button from '../Button';
 import Spacer from '../Spacer';
 
-function LimitMessage({title, message, popup, inputValue, setInputValue, setLimitContDisp, limitContainerDisplay,type}){
+import TaggedArt from '../../assets/artwork/tagged.svg';
+
+function LimitMessage({title, atHome, message, popup, inputValue, setInputValue, setLimitContDisp, limitContainerDisplay,type}){
 
     
     var buttonDirection = "row";
+    var buttonAlign = "center";
     var spaceBetween = null;
+    var span = null;
+    var artwork = null;
+
+    var messageId = "";
+    var justifyContentCont = "center";
+    var alignItemsCont = "center";
+    var alignItemsButton = "center";
+    var textAlignH1 = "center";
 
     function HideContainer(){
         setInputValue('');
@@ -22,32 +33,53 @@ function LimitMessage({title, message, popup, inputValue, setInputValue, setLimi
     }
 
     if (type === "tagged") {
-        title = "You've discovered a premium feature!"
-        message = "Upgrade your plan to view posts all the way from a month ago!"
+        title = "Upgrade Your Plan"
+        message = "to view all the posts that you are tagged in this past month!"
         buttonDirection = "column"
         spaceBetween = <Spacer height='15px'/>
+        span = <span>Upgrade </span>
     }
 
-    var messageId = "";
+
 
     if (popup === true) {
         messageId="messagePopup";
     } 
 
-    return (
-        <div id={messageId} className="limitContainer" style={{display:limitContainerDisplay, flexDirection:buttonDirection, height:'215px'}}>
-            <div className="textContainer">
-                <h1>{title}</h1>
-                <div className="spacer"></div>
-                <p>{message}</p>
-            </div>
-            
-            {spaceBetween}
+    var msgButtons = (<div className="buttonsContainer" style={{alignItems:alignItemsCont}}><Button buttonType="later" onClick={()=>{HideContainer()}}/><Spacer height="0px" width="10px"/><Button buttonType="upgrade"/></div>);
 
-            <div className="buttonsContainer">
-                <Button buttonType="later" onClick={()=>{HideContainer()}}/>
-                <Spacer height="0px" width="10px"/>
-                <Button buttonType="upgrade"/>
+    if (atHome === true) {
+        justifyContentCont = "center";
+        alignItemsCont = "center";
+        alignItemsButton = "left";
+        textAlignH1 = "left";
+        buttonAlign="flex-start"
+        artwork = <img className="artwork" src={TaggedArt} alt="artwork"/>
+
+    var msgButtons = (
+    <div className="buttonsContainer">
+        <Button buttonType="upgrade"/>
+        <Spacer height="0px" width="10px"/>
+        <Button buttonType="learn" />
+    </div>
+    )
+    };
+
+    
+
+    return (
+        <div id={messageId} className="limitContainer" style={{display:limitContainerDisplay, height:'215px', alignItems:alignItemsCont, justifyContent:justifyContentCont}}>
+
+            {artwork}
+
+            <div className="messageContainer" style={{flexDirection:buttonDirection, alignItems:buttonAlign}}>
+                <div className="textContainer">
+                    <h1 style={{textAlign:textAlignH1}}>{title}</h1>
+                    <div className="spacer"></div>
+                    <p>{span}{message}</p>
+                </div>
+                {spaceBetween}
+                {msgButtons}
             </div>
         </div>
     )
@@ -58,7 +90,8 @@ function LimitMessage({title, message, popup, inputValue, setInputValue, setLimi
                 type:'default',
                 popup:false,
                 title:'This is the default title',
-                message:'This is the default message'
+                message:'This is the default message',
+                atHome:false,
             }
 
 

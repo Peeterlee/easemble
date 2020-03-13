@@ -16,6 +16,12 @@ function Button({buttonType, onClick, text, iconDisplay, padding, bgcolor, fontS
         radius = '5px'
         bgcolor = "#BDBDBD";
         fontColor = "white"
+    } else if (buttonType === 'learn') {
+        text = "Learn More";
+        buttonId= "learn";
+        radius = '5px'
+        bgcolor = "rgba(30, 170, 189, 0)";
+        fontColor="#939393"
     }
 
     return(
