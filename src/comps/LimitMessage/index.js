@@ -2,21 +2,23 @@ import React, {useState} from 'react';
 import Button from '../Button';
 import Spacer from '../Spacer';
 
-function LimitMessage({title, message, type}){
+function LimitMessage({title, message, popup, inputValue, setInputValue, setLimitContDisp, limitContainerDisplay,type}){
 
     
-    const [limitContainerDisplay, setLimitContDisp] = useState("flex");
     var buttonDirection = "row";
     var spaceBetween = null;
 
     function HideContainer(){
-        setLimitContDisp("none");
+        setInputValue('');
+        console.log('blah');
     }
 
 
     if (type === "hashtags") {
         title = "You've reached your Hashtag limit";
         message = "Upgrade your plan so you can track up to 50 hashtags!"
+        spaceBetween = <Spacer height='15px'/>
+        buttonDirection = "column"
     }
 
     if (type === "tagged") {
@@ -26,8 +28,14 @@ function LimitMessage({title, message, type}){
         spaceBetween = <Spacer height='15px'/>
     }
 
+    var messageId = "";
+
+    if (popup === true) {
+        messageId="messagePopup";
+    } 
+
     return (
-        <div className="limitContainer" style={{display:limitContainerDisplay, flexDirection:buttonDirection, height:'215px'}}>
+        <div id={messageId} className="limitContainer" style={{display:limitContainerDisplay, flexDirection:buttonDirection, height:'215px'}}>
             <div className="textContainer">
                 <h1>{title}</h1>
                 <div className="spacer"></div>
@@ -48,6 +56,7 @@ function LimitMessage({title, message, type}){
 }
             LimitMessage.defaultProps = {
                 type:'default',
+                popup:false,
                 title:'This is the default title',
                 message:'This is the default message'
             }
