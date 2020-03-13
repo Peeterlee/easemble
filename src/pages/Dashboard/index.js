@@ -3,7 +3,6 @@ import Sidebar from '../../comps/Sidebar';
 
 import {menus} from '../../comps/Sidebar/menuItems';
 import Home from '../Home';
-import Hashtags from '../Hashtags';
 
 ///////////////
 
