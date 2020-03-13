@@ -1,13 +1,18 @@
 import React from 'react';
 import SectionItem from './SectionItem'
 
-function SectionTab({tabs}){
+function SectionTab({tabs, canDeleteTag}){
 
+    var addDelete = "false";
+
+    if (canDeleteTag === "true") {
+        addDelete="true"
+    }
     
     return(
         <div id="tab-container">
             {tabs.map((o,i)=>{
-                return <SectionItem key={i} {...o} />
+                return <SectionItem key={i} {...o} canDelete={addDelete} />
             })}            
         </div>
     )
@@ -29,6 +34,8 @@ SectionTab.defaultProps = {
         type:"text",
         hashtag:false,
     }],
+
+    canDeleteTag: false
 
 };
 

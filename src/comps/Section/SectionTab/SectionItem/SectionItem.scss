@@ -18,6 +18,7 @@
 
 
 .tab-title-hashtag{
+    line-height: 0px;
     cursor: pointer;
     width:auto;
     display: flex;
@@ -48,5 +49,17 @@
 .tab-title-hashtag-dashboard-active, .dashboard:hover {
     background-color: $hlight;
     color:white;
+
+    .deleteIcon path {
+        fill:white
+    }
 }
 
+.deleteIcon {
+    height: 10px;
+    margin-left: 10px;
+    path {
+        transition: all .3s ease;
+        fill:gray;
+    }
+}
