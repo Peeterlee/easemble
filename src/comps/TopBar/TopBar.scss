@@ -1,0 +1,20 @@
+.TopBarCont {
+    display: flex;
+    height: 25px;
+    padding: 5px 0px 5px 0px;
+    justify-content: center;
+    align-items: center;
+    background-color: #2AC3D8;
+
+    p {
+        margin-left: 10px;
+        font-family: 'TT Commons';
+        color: white;
+        font-weight: normal;
+    }
+    span {
+        font-family:'TT Commons DemiBold';
+        text-decoration: underline;
+        cursor:pointer;
+    }
+}

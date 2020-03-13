@@ -1,11 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import searchIcon from '../../assets/Icons/search.svg';
 
 
-function InputBox({inputType, inputName, width, height, placeholder}){
+function InputBox({inputType, inputValue, setInputValue, inputName, setLimitContDisp, limitContainerDisplay, width, height, placeholder}){
+    console.log(inputValue);
+
+    if (inputValue !== '') {
+        setLimitContDisp('flex');
+    } else if (inputValue === ''){
+        setLimitContDisp('none');
+    }
+
     return(
         <div className="input-cont" style={{width:width, height:height}}>
-            <input type="text" name={inputName} placeholder={placeholder}/>
+            <input type="text" name={inputName} placeholder={placeholder} onChange={(e)=>{setInputValue(e.target.value)}}/>
             <div className="submit-btn" style={{height:height}}><img src={searchIcon} alt="search icon"/></div>
         </div>
     )

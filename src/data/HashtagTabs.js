@@ -24,11 +24,6 @@ var HashtagTabs = [
       type:"btn",
       active:false
     },
-    {
-      tabTitle:"#weddingday",
-      type:"btn",
-      active:false
-    },
   ];
 
 export {HashtagTabs};

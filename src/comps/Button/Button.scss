@@ -17,7 +17,7 @@ $limitButtonPadding: 8px 10px 8px 10px!important;
     padding: $limitButtonPadding;
     font-size: 15px!important;
     height: auto;
-    background-color: #EBA2A1!important;
+    background-color: #2AC3D8!important;
     color:white!important;
     transition: 0.3s ease all;
 }
@@ -26,19 +26,17 @@ $limitButtonPadding: 8px 10px 8px 10px!important;
     padding: $limitButtonPadding;
     font-size: 15px!important;
     height: auto;
-    background-color:#BDBDBD!important;
-    color:white!important;
+    background-color: rgba(0, 0, 0, 0)!important;
+    color:#939393!important;
     transition: 0.3s ease all;
 }
 
 #later:hover {
-    background-color: rgb(142, 142, 142)!important;
+    background-color: rgba(0, 0, 0, 0)!important;
+    color:rgb(57, 57, 57)!important;
 }
 
 #upgrade:hover {
-    background-color: rgb(224, 136, 135)!important;
+    background-color: rgb(30, 170, 189)!important;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.1);
 }
-
-
-#upgrade:hover, #later:hover {
-    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.1);}

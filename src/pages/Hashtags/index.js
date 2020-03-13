@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PageTitle from '../../comps/PageTitle';
 
 import InputBox from '../../comps/InputBox';
@@ -9,21 +9,26 @@ import { HashtagTabs } from '../../data/HashtagTabs';
 import { HashtagPostData } from '../../data/HashtagPostData';
 import LimitMessage from '../../comps/LimitMessage';
 import Spacer from '../../comps/Spacer';
+import TopBar from '../../comps/TopBar';
 
 function Hashtags({hashtagTitle}) {
     
+    const [limitContainerDisplay, setLimitContDisp] = useState("none");
+    const [inputValue, setInputValue] = useState('');
+
+
     return (
         <div className="dash-main-container dash-s-container">
+            <TopBar />
 
             <div className="dash-header">
                 <PageTitle title="Hashtags" />
                 <Spacer />
-                <InputBox />
+                <InputBox setLimitContDisp={setLimitContDisp} limitContainerDisplay={limitContainerDisplay}  inputValue={inputValue} setInputValue={setInputValue} />
                 <Spacer />
                 <SectionTab tabs={HashtagTabs} canDeleteTag="true" />
-                <Spacer />
-
-                <LimitMessage type="hashtags"/>
+                <Spacer height="10px" />
+                <LimitMessage type="hashtags" limitContainerDisplay={limitContainerDisplay} setLimitContDisp={setLimitContDisp} inputValue={inputValue} setInputValue={setInputValue} />
             </div>
 
 
