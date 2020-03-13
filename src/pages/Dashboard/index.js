@@ -17,9 +17,10 @@ function Dashboard(){
             <div className="sidebar-cont">
             <Sidebar menus={menus}/>
             </div>
-            {/* <Home /> */}
+            <Home />
+             
             {/* <Hashtags /> */}
-            <Tagged />
+            {/* <Tagged /> */}
 
         </div>
     )
