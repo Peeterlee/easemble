@@ -1,8 +1,5 @@
 import React from 'react';
 import UserAvatar from '../UserAvatar';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
-
 
 function MentionPost({post_img, tagged_user, user_icon, acc_name, post_desc}){
     return(

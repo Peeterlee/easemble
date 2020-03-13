@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 
 import SectionTab from './SectionTab';
-import MentionPost from '../MentionPost';
 import HashtagPost from '../HashtagPost';
 import ScheduledPost from '../ScheduledPost';
 import AddPost from '../AddPost';
