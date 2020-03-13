@@ -71,3 +71,21 @@
         // border:1px solid white;
     }
 }
+
+.avatar_pricing{
+    display:flex;
+    align-items: center;
+    font-size:18px;
+    cursor: pointer;
+    color:black;
+    // justify-content:center;
+    font-family: "TT Commons";
+
+    .userphoto{
+        width:25px;
+        height:25px;
+        border-radius:25px;
+        margin-right:10px;
+        // border:1px solid white;
+    }
+}
