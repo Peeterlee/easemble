@@ -1,36 +1,49 @@
 import React from 'react';
 import PageTitle from '../../comps/PageTitle';
 
-import {menus} from '../../comps/Sidebar/menuItems';
-import Sidebar from '../../comps/Sidebar';
 import InputBox from '../../comps/InputBox';
 import SectionTab from '../../comps/Section/SectionTab/';
 
 import HashtagPost from '../../comps/HashtagPost';
-import { HashtagTabs } from '../../comps/Section/SectionTab/HashtagTabs';
-import { HashtagPostObjects } from '../../comps/HashtagPost/HashtagPostObjects';
+import { HashtagTabs } from '../../data/HashtagTabs';
+import { HashtagPostData } from '../../data/HashtagPostData';
+import LimitMessage from '../../comps/LimitMessage';
+import Spacer from '../../comps/Spacer';
 
-function Hashtags() {
+function Hashtags({hashtagTitle}) {
+    
     return (
-        <div className="dash-main-container hashtags-container">
+        <div className="dash-main-container dash-s-container">
 
-            <div className="hashtags-header">
+            <div className="dash-header">
                 <PageTitle title="Hashtags" />
-                <div className="spacer" style={{height:'60px'}}></div>
+                <Spacer />
                 <InputBox />
-                <div className="spacer" style={{height:'40px'}}></div>
-                <SectionTab tabs={HashtagTabs} />
+                <Spacer />
+                <SectionTab tabs={HashtagTabs} canDeleteTag="true" />
+                <Spacer />
+
+                <LimitMessage type="hashtags"/>
             </div>
-            <div className="hashtags-main-container">
-                    <div className="hashtags-content-container">
+
+
+            <div className="dash-s-main-container">
+                
+                <h1>{hashtagTitle}</h1>
+
+                    <div className="dash-content-container">
                         <div className="PostsContainer expanded"> 
-                            {HashtagPostObjects.map((o,i)=>{ return <HashtagPost key={i} {...o} /> })}  
+                            {HashtagPostData.map((o,i)=>{ return <HashtagPost key={i} {...o} /> })}  
                         </div>
                     </div>
             </div>
 
         </div>
     )
+}
+
+Hashtags.defaultProps = {
+    hashtagTitle:"#lovenote"
 }
 
 export default Hashtags;

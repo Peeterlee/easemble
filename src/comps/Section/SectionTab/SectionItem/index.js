@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
 
-function SectionItem({tabTitle, active, type }){
+import {ReactComponent as DeleteIcon }from '../../../../assets/Icons/delete.svg';
+
+
+function SectionItem({tabTitle, canDelete, active, type }){
 
     var tabClass= "";
     var TextClass = "tab-title"; 
@@ -9,6 +12,7 @@ function SectionItem({tabTitle, active, type }){
     var HashtagClassActive = "tab-title-hashtag tab-title-hashtag-dashboard-active";
     var taggedClass = 'tab-title-hashtag tagged';
     var taggedClassActive = "tab-title-hashtag tab-title-hashtag-tagged-active"
+    var deleteTagButton = "none";
             
     if (type === "text"){ tabClass= TextClass } 
     else if (type === "btn"){ tabClass= HashtagClass }
@@ -18,7 +22,11 @@ function SectionItem({tabTitle, active, type }){
     else if (type === "btn" && active){ tabClass= HashtagClassActive }
     else if (type === "tagged" && active){ tabClass= taggedClassActive};
 
-
+    if (canDelete === "true" ){
+        deleteTagButton = ""
+    } else {
+        deleteTagButton = "none"
+    }
 
     function clickTab(){
         console.log(tabTitle);
@@ -30,14 +38,19 @@ function SectionItem({tabTitle, active, type }){
         }
     }
     return(
-    <div onClick={()=>{clickTab()}}  className={tabClass}>{tabTitle}</div>
+    <div onClick={()=>{clickTab()}}  className={tabClass}>
+        {tabTitle} 
+        <DeleteIcon style={{display:deleteTagButton}} className="deleteIcon"/>
+    </div>
+
     )
 }
 
 SectionItem.defaultProps = {
     tabTitle:"Default Title",
     type:"text",
-    active:false
+    active:false,
+    canDelete:"false"
 };
 
 export default SectionItem;

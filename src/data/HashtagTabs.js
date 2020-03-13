@@ -1,5 +1,3 @@
-import React from'react';
-
 var HashtagTabs = [
     {
       tabTitle:"#lovenote",
@@ -32,6 +30,5 @@ var HashtagTabs = [
       active:false
     },
   ];
-
 
 export {HashtagTabs};

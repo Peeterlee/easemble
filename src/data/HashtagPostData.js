@@ -1,8 +1,4 @@
-import React from 'react';
-
-
-
-var HashtagPostObjects = [
+var HashtagPostData = [
     {
       acc_name:"lovenotebride",
       user_icon:"https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-19/s320x320/44830262_283764312257453_2342436053266202624_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_ohc=w55K5CRe9JEAX87YrEI&oh=e66b9e405182491672c9b64106f33aa4&oe=5F02941C",
@@ -126,4 +122,4 @@ var HashtagPostObjects = [
     },
     ]
 
-    export {HashtagPostObjects}
+    export {HashtagPostData}
