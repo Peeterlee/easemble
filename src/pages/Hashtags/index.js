@@ -28,7 +28,7 @@ function Hashtags({hashtagTitle}) {
                 <Spacer />
                 <SectionTab tabs={HashtagTabs} canDeleteTag="true" />
                 <Spacer height="10px" />
-                <LimitMessage type="hashtags" limitContainerDisplay={limitContainerDisplay} setLimitContDisp={setLimitContDisp} inputValue={inputValue} setInputValue={setInputValue} />
+                <LimitMessage popup={true} type="hashtags" limitContainerDisplay={limitContainerDisplay} setLimitContDisp={setLimitContDisp} inputValue={inputValue} setInputValue={setInputValue} />
             </div>
 
 

@@ -56,7 +56,7 @@ function LimitMessage({title, message, popup, inputValue, setInputValue, setLimi
 }
             LimitMessage.defaultProps = {
                 type:'default',
-                popup:true,
+                popup:false,
                 title:'This is the default title',
                 message:'This is the default message'
             }
