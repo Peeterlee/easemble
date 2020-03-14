@@ -46,6 +46,15 @@
     color:white;
 }
 
+.popup {
+    background-color:#3F3F3F;
+    color:white;
+    font-size: 14px !important;
+    padding:0px 5px 0px 5px !important;
+    height:25px;
+    font-family: "TT Commons Light" !important;
+}
+
 .tab-title-hashtag-dashboard-active, .dashboard:hover {
     background-color: $hlight;
     color:white;
@@ -56,7 +65,6 @@
 }
 
 .deleteIcon {
-    height: 10px;
     margin-left: 10px;
     path {
         transition: all .3s ease;

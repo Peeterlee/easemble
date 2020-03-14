@@ -1,0 +1,99 @@
+.pricing-credit-container {
+    display:flex;
+    flex-direction: row;
+    flex:1;
+    height:100vh;
+    font-family: 'TT Commons';
+
+    .pricing-credit-left{
+        background-color: white;
+        flex:1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+
+        header {
+            width:100%;
+            margin: 20px 0 0 50px;
+        }
+
+        main {
+            text-align: center;
+            margin-top:50px;
+
+            .pricing-credit-plan {
+                display:flex;
+                flex-direction: row;
+                justify-content: center;
+                margin-bottom: 35px;
+
+                h1{
+                    margin:0;
+
+                    //UNDERLINE!!!!!!!!
+                    div {
+                        border-bottom:#2AC3D8 8px solid;
+                        height:20px;
+                        width:120px;
+                        display:inline-block
+                    }
+                }
+
+                span {
+                    text-align: left;
+                }
+
+            }
+
+            .pricing-credit-plan-details {
+                display:flex;
+                flex-direction: row;
+                
+                .plan-detail-container {
+                    margin:0;
+                    padding:0;
+
+                    .plan-details {
+                        list-style-type: none;
+                        font-size:16px;
+                        display:flex;
+                        margin-bottom: 13px;
+
+                        .checkIcon {
+                            color: #2AC3D8;
+                            font-size: 16px;
+                            margin-right:10px;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        footer {
+            margin:auto 0;
+        }
+    }
+
+    .pricing-credit-right {
+        background-color: #f8f8f9;
+        flex:2;
+        text-align: center;
+
+        .view-all-container {
+            width:100%;
+            font-size: 20px;
+            
+            span {
+                display: flex;
+                align-items: center;
+            }
+
+            span:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+

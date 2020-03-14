@@ -15,17 +15,17 @@ function Popup({active, }){
     var taggedpeoplebuttons = [
         {
           tabTitle:"@lovenote",
-          type:"tagged",
+          type:"popup",
           active:false
         },
         {
           tabTitle:"@lovenotedress",
-          type:"tagged",
+          type:"popup",
           active:false
         },
         {
           tabTitle:"@lovenotebabes",
-          type:"tagged",
+          type:"popup",
           active:false
         }
       ]
@@ -34,7 +34,7 @@ function Popup({active, }){
           SetselectedTo(event.target.value);
       }
 
-      var layout, popup_container_flex, popup_container_width, leftButTxt, rightButTxt, imgWidth, imgHeight;
+      var layout, popup_container_flex, popup_container_width, leftButTxt, rightButTxt, leftButClass, rightButClass, imgWidth, imgHeight;
       
       if(popupViewMode === 'read'){
         layout = null;
@@ -42,6 +42,8 @@ function Popup({active, }){
         popup_container_width = '500px';
         leftButTxt = 'Exit';
         rightButTxt = 'Edit Post';
+        leftButClass = "popupBut exit";
+        rightButClass = "popupBut edit";
         imgWidth = '100%';
         imgHeight = '500px';
       }else {
@@ -57,7 +59,7 @@ function Popup({active, }){
                         <input type="text" placeholder="Add @username seperated by a space" className="tagged-people-input" />
                         <div className="add-tagged-people">+</div>
                     </div>
-                    <SectionTab tabs={taggedpeoplebuttons} />
+                    <SectionTab tabs={taggedpeoplebuttons} canDeleteTag="true" />
                 </div>
                 <div className="schedule-cont">
                     <p className="popup-title">Schedule Post</p> 
@@ -69,6 +71,8 @@ function Popup({active, }){
           popup_container_width = '700px';
           leftButTxt = 'Discard';
           rightButTxt = 'Post Now';
+          leftButClass = "popupBut discard";
+          rightButClass = "popupBut postnow";
           imgWidth = "300px";
           imgHeight = "100%";
       }
@@ -106,12 +110,12 @@ function Popup({active, }){
             <div className="bottom-cont"> 
 
             <p 
-                className="popupBut exit" 
+                className={leftButClass} 
                 onClick={()=>(popupViewMode==="read") ? null : SetpoopupViewMode("read")}>
                 {leftButTxt}
             </p>
             <p
-                className="popupBut edit" 
+                className={rightButClass} 
                 onClick={()=>(popupViewMode === 'read') ? SetpoopupViewMode('edit') : null} >
                 {rightButTxt}
                

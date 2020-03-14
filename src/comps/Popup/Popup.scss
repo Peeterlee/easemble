@@ -78,9 +78,20 @@
     .exit {
         color:#C5C5C5!important;
     }
+
+    .discard {
+        color:#C5C5C5!important;
+    }
     
     .edit {
         color: #eba2a1!important;
+    }
+
+    .postnow {
+        background-color: #eba2a1!important;
+        color:white !important;
+        padding:3px 5px !important;
+        border-radius: 5px;
     }
 
     .edit:active {
