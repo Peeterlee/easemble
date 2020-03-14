@@ -3,6 +3,7 @@ import Button from '../Button';
 import Spacer from '../Spacer';
 
 import TaggedArt from '../../assets/artwork/tagged.svg';
+import PostsArt from '../../assets/artwork/scheduled.svg';
 
 function LimitMessage({title, atHome, message, popup, inputValue, setInputValue, setLimitContDisp, limitContainerDisplay,type}){
 
@@ -12,6 +13,7 @@ function LimitMessage({title, atHome, message, popup, inputValue, setInputValue,
     var spaceBetween = null;
     var span = null;
     var artwork = null;
+    var limitContainerHeight = "215px";
 
     var messageId = "";
     var justifyContentCont = "center";
@@ -40,6 +42,15 @@ function LimitMessage({title, atHome, message, popup, inputValue, setInputValue,
         span = <span>Upgrade </span>
     }
 
+    if (type === "posts") {
+        title = "Set Up Post Scheduling";
+        message = "to organize and schedule your posts!";
+        buttonDirection = "column";
+        limitContainerHeight = "250px";
+        spaceBetween = <Spacer height='15px'/>
+        span = <span>Upgrade </span>
+    }
+
 
 
     if (popup === true) {
@@ -54,21 +65,26 @@ function LimitMessage({title, atHome, message, popup, inputValue, setInputValue,
         alignItemsButton = "left";
         textAlignH1 = "left";
         buttonAlign="flex-start"
-        artwork = <img className="artwork" src={TaggedArt} alt="artwork"/>
 
     var msgButtons = (
     <div className="buttonsContainer">
-        <Button buttonType="upgrade"/>
-        <Spacer height="0px" width="10px"/>
         <Button buttonType="learn" />
+        <Spacer height="0px" width="10px"/>
+        <Button buttonType="upgrade"/>
     </div>
     )
     };
 
+    if (atHome === true && type === "tagged"){
+        artwork = <img className="artwork" src={TaggedArt} alt="artwork"/>
+    } else if (atHome === true && type === "posts") {
+        artwork = <img className="artwork" src={PostsArt} alt="artwork"/>
+    }
+
     
 
     return (
-        <div id={messageId} className="limitContainer" style={{display:limitContainerDisplay, height:'215px', alignItems:alignItemsCont, justifyContent:justifyContentCont}}>
+        <div id={messageId} className="limitContainer" style={{display:limitContainerDisplay, height:limitContainerHeight, alignItems:alignItemsCont, justifyContent:justifyContentCont}}>
 
             {artwork}
 

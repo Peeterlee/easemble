@@ -50,16 +50,8 @@ var posts = null;
     
   }
 
-  if (sectionType === "Posts"){
-    var buttonTitle = "View Posts"
-    var tab1="Scheduled";
-    var tab2="Drafts";
-    var tab3="";
 
-    var posts =  <div className={postClass}> {ScheduledPostData.map((o,i)=>{ return <ScheduledPost key={i} {...o} /> })} <AddPost />  </div>;
-
-  }
-
+  const [HomePosts, setHomePosts] = useState(<div className={postClass}> {ScheduledPostData.map((o,i)=>{ return <ScheduledPost key={i} {...o} /> })} <AddPost />  </div>);
   const [TaggedPosts, setTaggedPosts] = useState(<div className={postClass}> {TaggedPostData.map((o,i)=>{ return <HashtagPost key={i} {...o} /> })}  </div>);
 
 
@@ -73,15 +65,34 @@ var posts = null;
       setTaggedPosts(<div className={postClass}> {TaggedPostData.map((o,i)=>{ return <HashtagPost key={i} {...o} /> })}  </div>)
     }
 
-    currentTab = <SectionTabList tabTitle1={tab1} tabTitle2={tab2} tabTitle3={tab3} onClickMonth={()=>{displayLimit()}} onClickElse={()=>{displayElse()}} />;
+    currentTab = <SectionTabList tabTitle1={tab1} tabTitle2={tab2} tabTitle3={tab3} onClickTab1={()=>{displayElse()}} onClickTab2={()=>{displayElse()}}onClickTab3={()=>{displayLimit()}}  />;
 
     var buttonTitle = "View Tagged"
     var posts = TaggedPosts;
   }
     
-  if (sectionType === "Mentions" || sectionType === "Posts"){
-    currentTab = <SectionTabList tabTitle1={tab1} tabTitle2={tab2} tabTitle3={tab3} />;
-  } else if (sectionType === "Hashtags"){
+  if (sectionType === "Posts"){
+    var buttonTitle = "View Posts"
+    var tab1="Drafts";
+    var tab2="Scheduled";
+    var tab3="";
+
+    currentTab = <SectionTabList tabTitle1={tab1} tabTitle2={tab2} tabTitle3={tab3} onClickTab1={()=>{displayPosts()}} onClickTab2={()=>{displayPostsLimit()}} />;
+
+    function displayPostsLimit(){
+      setHomePosts(<div className={postClass} style={{display:"flex", justifyContent:"center"}}><LimitMessage type="posts" atHome={true}/></div>);
+    }
+
+    function displayPosts(){
+      setHomePosts(<div className={postClass}> {ScheduledPostData.map((o,i)=>{ return <ScheduledPost key={i} {...o} /> })} <AddPost />  </div>);
+    }
+
+
+    var posts =  HomePosts;
+
+  }
+  
+  else if (sectionType === "Hashtags"){
     currentTab = <SectionTab tabs={HashtagTabs}/>;
   };
 
