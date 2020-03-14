@@ -20,7 +20,7 @@ function Tagged({label}) {
 
     function clickTab(){
             setDisplayTagged('none');
-            setShowLimit( <div className="limitPopup"> <Spacer height="50px"/> <LimitMessage type="tagged"/></div>);
+            setShowLimit( <div className="limitPopup"> <Spacer height="50px"/> <LimitMessage type="tagged" atHome={true}/></div>);
     }
 
     function clickOther(){

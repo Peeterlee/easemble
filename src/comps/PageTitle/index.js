@@ -13,7 +13,7 @@ function PageTitle({title, message, greetingDisplay, user}){
         welcome_user=null;
         home_user = user + '!';
         line = <hr />
-        msgSize = '35px';
+        msgSize = '30px';
     }else if (title === 'welcome'){
         flexdir='column'; 
         home_user=null;

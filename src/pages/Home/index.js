@@ -1,6 +1,7 @@
 import React from 'react';
 import PageTitle from '../../comps/PageTitle';
 import Section from '../../comps/Section';
+import Spacer from '../../comps/Spacer';
 
 
 
@@ -11,6 +12,7 @@ function Home(){
 
             <div className="home-main-container">
                     <PageTitle title="home" message="Good Afternoon" user="Love Note" />
+                    <Spacer />
                     <Section sectionType="Posts"/>
                     <Section sectionType="Hashtags" isSectionExpanded={true}/>
                     <Section sectionType="Tagged"/>
