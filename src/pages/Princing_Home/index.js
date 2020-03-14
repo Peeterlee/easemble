@@ -1,14 +1,33 @@
-import React from 'react';
-import UserAvatar from '../../comps/UserAvatar';
+import React, {useState} from 'react';
+
 import CheckIcon from '@material-ui/icons/Check';
 import Switch from '@material-ui/core/Switch';
-
+import Logo from '../../comps/Logo';
 
 function Pricing_Home(){
+
+    const [checked, Setchecked] = useState(false);
+
+    var MonthlyColor, AnnuallyColor, StandardPrice, TeamPrice, SavePlanDisplay;
+
+    if(checked){
+        AnnuallyColor = "black";
+        MonthlyColor = "#B8B8B8";
+        StandardPrice = "16";
+        TeamPrice = "40"
+        SavePlanDisplay = "block"
+    }else{
+        AnnuallyColor = "#B8B8B8";
+        MonthlyColor = "black";
+        StandardPrice = "19";
+        TeamPrice = "48"
+        SavePlanDisplay = "none"
+    }
+
     return(
         <div className="pricing-home-container">
             <header className="pricing-home-top">
-                <UserAvatar class_name="avatar_pricing" user_icon="https://scontent-sea1-1.cdninstagram.com/v/t51.2885-19/s320x320/44830262_283764312257453_2342436053266202624_n.jpg?_nc_ht=scontent-sea1-1.cdninstagram.com&_nc_ohc=w55K5CRe9JEAX_Ll8kM&oh=2509ee9ed425a025e9a644f25297cc46&oe=5F02941C" />
+                <Logo color="#D78D8C" />
             </header>
             <main className="pricing-home-bottom">
                 <section className="pricing-home-bottom-title">Select a Plan that's Right for You</section>
@@ -28,8 +47,8 @@ function Pricing_Home(){
                     <article className="pricing-home-bottom-plans">
                         <div className="plan-popular">MOST POPULAR</div>
                         <header>STANDARD</header>
-                        <div className="plan-price"><font className="plan-price-dollar">$</font><font className="plan-price-number">16<font className="plan-price-month">/mo</font></font></div>
-                        <div className="plan-save">Save $36 a year!</div>
+                        <div className="plan-price"><font className="plan-price-dollar">$</font><font className="plan-price-number">{StandardPrice}<font className="plan-price-month">/mo</font></font></div>
+                        <div className="plan-save" style={{display:SavePlanDisplay}}>Save $36 a year!</div>
                         <p>For small and medium-sized businesses</p>
                         <div className="hr"></div>
                         <ul className="plan-limit-container">
@@ -43,8 +62,8 @@ function Pricing_Home(){
                     </article>
                     <article className="pricing-home-bottom-plans">
                         <header>TEAM</header>
-                        <div className="plan-price"><font className="plan-price-dollar">$</font><font className="plan-price-number">40<font className="plan-price-month">/mo</font></font></div>
-                        <div className="plan-save">Save $86 a year!</div>
+                        <div className="plan-price"><font className="plan-price-dollar">$</font><font className="plan-price-number">{TeamPrice}<font className="plan-price-month">/mo</font></font></div>
+                        <div className="plan-save" style={{display:SavePlanDisplay}}>Save $86 a year!</div>
                         <p>For larger businesses, teams, and multiple social media profiles</p>
                         <div className="hr"></div>
                         <ul className="plan-limit-container">
@@ -60,8 +79,8 @@ function Pricing_Home(){
                 </section>
             </main>
             <footer>
-                <div><font>MONTHLY</font><Switch color="default" /> <font>ANNUALLY</font> <span>(15% Discount)</span></div>
-                <div>Learn more about our Terms & Conditions</div>
+                <div><font color={MonthlyColor}>MONTHLY</font><Switch checked={checked} onChange={()=>{Setchecked(!checked)}} color="default" /> <font color={AnnuallyColor}>ANNUALLY</font> <span style={{color:"#00E492",marginLeft:"10px"}}>(15% Discount)</span></div>
+                <div style={{marginTop:"20px"}}>Learn more about our <span style={{fontFamily:"TT Commons Bold"}}>Terms & Conditions</span></div>
             </footer>
         </div>
     )
