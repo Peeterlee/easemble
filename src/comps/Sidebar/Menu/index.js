@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import {NavLink} from 'react-router-dom';
+
 import ArrowDropUpOutlinedIcon from '@material-ui/icons/ArrowDropUpOutlined';
 import ArrowDropDownOutlinedIcon from '@material-ui/icons/ArrowDropDownOutlined';
 import SubMenu from './SubMenu';
@@ -21,7 +23,12 @@ function Menu({menu, icon, submenus}){
                 return <SubMenu key={i} submenu={o} />
             });
         }
-       
+    }
+    var linkToPage = "";
+    if (menu === "Home"){
+        linkToPage= "/"
+    } else {
+        linkToPage = "/plans";
     }
 
     function clickMenu(){
@@ -30,10 +37,13 @@ function Menu({menu, icon, submenus}){
 
     return(
         <div>
+            
             <div className="menu" onClick={clickMenu}>
                 <div>
                     {icon}
+                    <NavLink activeClassName="menu-active" className="menuText" to={'/'}>
                     {menu}
+                    </NavLink>
                 </div>
                 
                 {arrow}

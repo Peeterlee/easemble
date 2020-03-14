@@ -2,6 +2,7 @@
 
 .menu{
     transition: .2s all ease;
+    text-decoration: none;
     color:white;
     padding:5px 10px;
     display:flex;
@@ -22,4 +23,14 @@
 
 .menu:hover{
     background-color: #b08d90;
+    text-decoration: none;
+}
+
+.menu-active {
+    text-decoration: none;
+    color:white;
+}
+
+.menuText {
+    color: white ;
 }

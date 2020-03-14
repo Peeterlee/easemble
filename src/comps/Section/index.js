@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 
 import SectionTab from './SectionTab';
 import HashtagPost from '../HashtagPost';
@@ -16,6 +17,7 @@ function Section({sectionType, buttonTitle, isSectionExpanded}){
 var buttonTitle = "View All"
 
 const [sectionExpand, setSectionExpand] = useState(false);
+var linkPage = '/'
 
 
 var postClass = "PostsContainer";
@@ -44,6 +46,7 @@ var tabs = null;
 var posts = null;
 
   if (sectionType === "Hashtags"){
+    linkPage= '/hashtags';
     var buttonTitle = "View Hashtags"
     // var tabs = {HashtagTabs};
     var posts =  <div className={postClass}> {HashtagPostData.map((o,i)=>{ return <HashtagPost key={i} {...o} /> })}  </div>;
@@ -56,6 +59,7 @@ var posts = null;
 
 
   if (sectionType === "Tagged"){
+    linkPage='/tagged';
 
     function displayLimit(){
       setTaggedPosts(<div className={postClass} style={{display:"flex", justifyContent:"center"}}><LimitMessage type="tagged" atHome={true}/></div>)
@@ -103,7 +107,9 @@ var posts = null;
 
         <div className='SectionTitleContainer'>
             <p className="SectionTitle">{sectionType}</p>
-            <p  onClick={clickViewButton} className="SectionButton" >{buttonTitle}</p>
+            <Link to={linkPage} className="linkStyle">
+            <p className="SectionButton" >{buttonTitle}</p>
+            </Link>
         </div>
 
         {currentTab}

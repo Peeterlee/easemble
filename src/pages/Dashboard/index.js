@@ -1,7 +1,7 @@
 import React from 'react';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
 import Sidebar from '../../comps/Sidebar';
-
-
 import {menus} from '../../comps/Sidebar/menuItems';
 import Home from '../Home';
 import Hashtags from '../Hashtags';
@@ -19,11 +19,7 @@ function Dashboard(){
             <div className="sidebar-cont">
             <Sidebar menus={menus}/>
             </div>
-            <Home />
-             
-            {/* <Hashtags /> */}
-            {/* <Tagged /> */}
-
+                <Home/>
         </div>
     )
 }
