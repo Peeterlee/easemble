@@ -40,7 +40,7 @@ function ScheduledPost({postImg, postEdited, isPosted, postDate, postDay, carous
                 </div> */}
 
                 <div className="button_cont">
-                        <div className="post_button" onClick={()=>{setPostPopupDisplay("flex")}}>View Post</div>
+                        <div className="post_button" onClick={()=>{setPostPopupDisplay("flex")}}>Edit Post</div>
                     </div>
 
             </div>
