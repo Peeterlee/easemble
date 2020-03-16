@@ -35,7 +35,7 @@ function Pricing_Home(){
                     <article className="pricing-home-bottom-plans">
                         <header>STARTER</header>
                         <div className="plan-free">Free!</div>
-                        <p>Free forever and provides you with all your basic needs</p>
+                        <p className="plan-for">Free forever and provides you with all your basic needs</p>
                         <div className="hr"></div>
                         <ul className="plan-limit-container">
                             <li className="plan-limits"><CheckIcon className="checkIcon" /> Up to 3 Hashtags</li>
@@ -49,7 +49,7 @@ function Pricing_Home(){
                         <header>STANDARD</header>
                         <div className="plan-price"><font className="plan-price-dollar">$</font><font className="plan-price-number">{StandardPrice}<font className="plan-price-month">/mo</font></font></div>
                         <div className="plan-save" style={{display:SavePlanDisplay}}>Save $36 a year!</div>
-                        <p>For small and medium-sized businesses</p>
+                        <p className="plan-for" style={{padding:"0 40px"}}>For small and medium-sized businesses</p>
                         <div className="hr"></div>
                         <ul className="plan-limit-container">
                             <li className="plan-limits"><CheckIcon className="checkIcon" /> Up to 10 Hashtags</li>
@@ -64,7 +64,7 @@ function Pricing_Home(){
                         <header>TEAM</header>
                         <div className="plan-price"><font className="plan-price-dollar">$</font><font className="plan-price-number">{TeamPrice}<font className="plan-price-month">/mo</font></font></div>
                         <div className="plan-save" style={{display:SavePlanDisplay}}>Save $86 a year!</div>
-                        <p>For larger businesses, teams, and multiple social media profiles</p>
+                        <p className="plan-for">For larger businesses, teams, and multiple social media profiles</p>
                         <div className="hr"></div>
                         <ul className="plan-limit-container">
                             <li className="plan-limits"><CheckIcon className="checkIcon" /> Up to 30 Hashtags</li>
@@ -80,7 +80,7 @@ function Pricing_Home(){
             </main>
             <footer>
                 <div><font color={MonthlyColor}>MONTHLY</font><Switch checked={checked} onChange={()=>{Setchecked(!checked)}} color="default" /> <font color={AnnuallyColor}>ANNUALLY</font> <span style={{color:"#00E492",marginLeft:"10px"}}>(15% Discount)</span></div>
-                <div style={{marginTop:"20px"}}>Learn more about our <span style={{fontFamily:"TT Commons Bold"}}>Terms & Conditions</span></div>
+                <div style={{marginTop:"30px"}}>Learn more about our <span style={{fontFamily:"TT Commons Bold"}}>Terms & Conditions</span></div>
             </footer>
         </div>
     )
