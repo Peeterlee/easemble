@@ -32,6 +32,6 @@ const mapStateToProps = state => {
     return {
         tier:state.tier
     }
-  }
+}
 
 export default connect(mapStateToProps)(InputBox);

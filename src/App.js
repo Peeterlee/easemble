@@ -22,11 +22,6 @@ function App() {
           <Route path="/onboarding" component={SignUp_Hashtag}/>
           <Route path="/plans" component={Pricing_Home}/>
           <Route exact={true} path ="/payment" render={(props)=>{ return (<Pricing_Creditcard {...props} /> )}} />
-
-          {/* Dashboard Pages */}
-          {/* <Route exact={true} path="/" component={Dashboard} /> */}
-          {/* <Route path="/hashtags"  component={Hashtags} />
-          <Route path="/tagged"  component={Tagged} /> */}
           <Route exact={true} path ="/" render={()=>{ return (<Dashboard setPostPopupDisplay={setPostPopupDisplay} postPopupDisplay={postPopupDisplay} /> )}} />
           <Route path ="/hashtags" render={()=>{ return (<Hashtags setPostPopupDisplay={setPostPopupDisplay} postPopupDisplay={postPopupDisplay} /> )}} />
           <Route path ="/tagged" render={()=>{ return (<Tagged setPostPopupDisplay={setPostPopupDisplay} postPopupDisplay={postPopupDisplay} /> )}} />
