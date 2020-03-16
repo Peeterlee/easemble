@@ -42,13 +42,17 @@ $res: 200px;
 }
 
 .time_current {
-    color: #C99483;
+    // color: #C99483;
+    color:#BDBDBD;
 }
 
 .time_past {
     color:#BDBDBD;
 }
 
+.lastEdited {
+    color:#C99483;
+}
 // OVERLAY
 
 .sched_post_cont:hover  .sched_overlay{

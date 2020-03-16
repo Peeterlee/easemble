@@ -2,6 +2,7 @@ import React from 'react';
 import Menu from './Menu';
 import UserAvatar from '../UserAvatar';
 import Logo from '../Logo';
+import { Link } from '@material-ui/core';
 
 function Sidebar({menus}){
 

@@ -1,3 +1,15 @@
+.postPopup {
+    width: 100vw;
+    height: 100vh;
+    // display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.37);
+    position: fixed;
+    // width: ;
+}
+
 .popup-container {
     display: flex;
     flex-direction: column;

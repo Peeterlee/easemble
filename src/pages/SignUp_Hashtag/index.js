@@ -1,11 +1,14 @@
 import React from 'react';
 import Logo from '../../comps/Logo';
 import PageTitle from '../../comps/PageTitle';
+import { NavLink } from 'react-router-dom';
 import PickHashTag from '../../comps/PickHashTag';
 import Button from '../../comps/Button';
 import {connect} from 'react-redux';
 
 function SignUp_Hashtag({hashtag_amount}){
+
+    
 
     var pick_hashtag = [
         {
@@ -58,12 +61,16 @@ function SignUp_Hashtag({hashtag_amount}){
         }
     ]
 
-    var button_bgcolor = null,
-        button_txtcolor = null;
+    var button_bgcolor = '#E0E0E0',
+    button_txtcolor = '#939393'
+
+        
+    var DoneButton = <Button text="Done" bgcolor={button_bgcolor} fontColor={button_txtcolor} radius="10px" padding="10px 130px 10px 130px" />;
 
     if(hashtag_amount === 3){
         button_bgcolor = '#D78D8C';
         button_txtcolor = 'white';
+     var DoneButton = ( <NavLink style={{textDecoration:'none'}} to="/"> <Button text="Done" bgcolor={button_bgcolor} fontColor={button_txtcolor} radius="10px" padding="10px 130px 10px 130px" /> </NavLink>);
     }else {
         button_bgcolor = '#E0E0E0';
         button_txtcolor = '#939393'
@@ -85,7 +92,9 @@ function SignUp_Hashtag({hashtag_amount}){
                             })
                         }
                     </div>
-                    <Button text="Done" bgcolor={button_bgcolor} fontColor={button_txtcolor} radius="10px" padding="10px 130px 10px 130px" />
+
+                    {DoneButton}
+                    
                 </div>
             </div>
         </div>

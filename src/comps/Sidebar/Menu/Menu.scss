@@ -2,6 +2,7 @@
 
 .menu{
     transition: .2s all ease;
+    text-decoration: none;
     color:white;
     padding:5px 10px;
     display:flex;
@@ -20,6 +21,18 @@
     margin-right: 10px;
 }
 
-.menu:hover{
+.menu:hover, .menu-active{
     background-color: #b08d90;
+    text-decoration: none;
+}
+
+.menuLink {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    p{
+        margin:0;
+        padding-top: 3.5px;
+    }
 }

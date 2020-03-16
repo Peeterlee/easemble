@@ -54,13 +54,23 @@ function SectionTabList({tabTitle1, tabTitle2, tabTitle3, onClickTab1, onClickTa
     setValue(newValue);
   };
 
+  var ThirdTab = <AntTab label={tabTitle3} onClick={onClickTab3} />
+
+  if (tabTitle3 === ""){
+    ThirdTab = <AntTab label={tabTitle3} onClick={onClickTab3} disabled/>
+  } else {
+    ThirdTab= <AntTab label={tabTitle3} onClick={onClickTab3} />
+
+  }
+
+
   return (
     <div className={classes.root}>
       <div className={classes.demo1}>
         <AntTabs value={value} onChange={handleChange} aria-label="ant example">
           <AntTab label={tabTitle1} onClick={onClickTab1}/>
           <AntTab label={tabTitle2} onClick={onClickTab2}/>
-          <AntTab label={tabTitle3} onClick={onClickTab3}/>
+          {ThirdTab}
         </AntTabs>
       </div>
     </div>

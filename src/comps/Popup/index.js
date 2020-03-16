@@ -6,7 +6,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Button from '../Button';
 import calendarIcon from '../../assets/Icons/calendar_gray.svg';
 
-function Popup({active, }){
+function Popup({active, img, postPopupDisplay, setPostPopupDisplay }){
 
     const [savePopup, SetsavePopup] = useState(false);
     const [selectedTo, SetselectedTo] = useState("general");
@@ -94,42 +94,56 @@ function Popup({active, }){
         </div>
       ) : null;
 
+      function checkRightBut(){
+          if (popupViewMode === "read"){
+            SetpoopupViewMode('edit')
+          } else {
+            setPostPopupDisplay("none");
+            SetpoopupViewMode('read');
+          };
+      };
+
     return(
-        <div className="popup-container" style={{width:popup_container_width}}>
-            <div className="top-cont"> 
-                <UserAvatar class_name="avatar_popup" user_icon="https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-19/s320x320/39938617_262278214396692_7641252861220749312_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_ohc=0sDll4xP3ecAX8Pflxz&oh=5301c9b3ffbccdd314d116420743c3db&oe=5E85C434" acc_name="irvinalcira"/>
-            <p className="popupBut" onClick={()=>{SetsavePopup(!savePopup)}}>Save</p>
-            </div>
-            <div className="mid-cont" style={{flexDirection:popup_container_flex}}> 
-                <div className="img-cont">
-                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/img-3462-1-1576693070.jpg?crop=1.00xw:0.803xh;0,0.181xh&resize=640:*" alt="post image" style={{width:imgWidth, height:imgHeight}} />
+
+        <div className="postPopup" style={{display:postPopupDisplay}}>
+
+            <div className="popup-container" style={{width:popup_container_width}}>
+                <div className="top-cont"> 
+                    <UserAvatar class_name="avatar_popup" user_icon="https://instagram.fyvr3-1.fna.fbcdn.net/v/t51.2885-19/s320x320/39938617_262278214396692_7641252861220749312_n.jpg?_nc_ht=instagram.fyvr3-1.fna.fbcdn.net&_nc_ohc=0sDll4xP3ecAX8Pflxz&oh=5301c9b3ffbccdd314d116420743c3db&oe=5E85C434" acc_name="irvinalcira"/>
+                <p className="popupBut" onClick={()=>{SetsavePopup(!savePopup)}}>Save</p>
                 </div>
-                {layout}
+                <div className="mid-cont" style={{flexDirection:popup_container_flex}}> 
+                    <div className="img-cont">
+                    <img src={img} alt="post image" style={{width:imgWidth, height:imgHeight}} />
+                    </div>
+                    {layout}
+                </div>
+
+                <div className="bottom-cont"> 
+
+                <p 
+                    className={leftButClass} 
+                    onClick={()=>(popupViewMode==="read") ? setPostPopupDisplay("none") : SetpoopupViewMode("read")}>
+                    {leftButTxt}
+                </p>
+                <p
+                    className={rightButClass} 
+                    onClick={()=>{checkRightBut()} }>
+                    {rightButTxt}
+                
+                </p>
+
+                </div>
+
+                {saveToPopup}
             </div>
-
-            <div className="bottom-cont"> 
-
-            <p 
-                className={leftButClass} 
-                onClick={()=>(popupViewMode==="read") ? null : SetpoopupViewMode("read")}>
-                {leftButTxt}
-            </p>
-            <p
-                className={rightButClass} 
-                onClick={()=>(popupViewMode === 'read') ? SetpoopupViewMode('edit') : null} >
-                {rightButTxt}
-               
-            </p>
-
-            </div>
-
-            {saveToPopup}
         </div>
     )
 }
 
 Popup.defaultProps = {
     active:false,
+    img: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/img-3462-1-1576693070.jpg?crop=1.00xw:0.803xh;0,0.181xh&resize=640:*',
 
 };
 

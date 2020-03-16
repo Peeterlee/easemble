@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
 import Button from '../Button';
 import Spacer from '../Spacer';
 
@@ -6,7 +7,6 @@ import TaggedArt from '../../assets/artwork/tagged.svg';
 import PostsArt from '../../assets/artwork/scheduled.svg';
 
 function LimitMessage({title, atHome, message, popup, inputValue, setInputValue, setLimitContDisp, limitContainerDisplay,type}){
-
     
     var buttonDirection = "row";
     var buttonAlign = "center";
@@ -57,7 +57,14 @@ function LimitMessage({title, atHome, message, popup, inputValue, setInputValue,
         messageId="messagePopup";
     } 
 
-    var msgButtons = (<div className="buttonsContainer" style={{alignItems:alignItemsCont}}><Button buttonType="later" onClick={()=>{HideContainer()}}/><Spacer height="0px" width="10px"/><Button buttonType="upgrade"/></div>);
+    var msgButtons = (<div className="buttonsContainer" style={{alignItems:alignItemsCont}}>
+        <Button buttonType="later" onClick={()=>{HideContainer()}}/>
+        <Spacer height="0px" width="10px"/>
+        <Link className="linkStyle" to={'/plans'} >
+        <Button buttonType="upgrade"/>
+        </Link>
+        </div>
+        );
 
     if (atHome === true) {
         justifyContentCont = "center";
@@ -70,7 +77,9 @@ function LimitMessage({title, atHome, message, popup, inputValue, setInputValue,
     <div className="buttonsContainer">
         <Button buttonType="learn" />
         <Spacer height="0px" width="10px"/>
+        <Link className="linkStyle" to={'/plans'}>
         <Button buttonType="upgrade"/>
+        </Link>
     </div>
     )
     };

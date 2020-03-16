@@ -1,10 +1,23 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 
 function SubMenu({submenu}){
+    var subMenuLink= "";
+    var subMenuActiveColor = "";
+
+    if (submenu === "Tagged In"){
+        subMenuLink = "/tagged";
+    } else if (submenu === "Hashtags"){
+        subMenuLink = "/hashtags";
+    } else {
+        subMenuLink="/";
+        subMenuActiveColor = "#BDBDBD";
+    }
+
     return(
-        <div className="submenu">
+        <NavLink to={subMenuLink} className="submenu" activeClassName="submenu-active"  exact={true}>
             {submenu}
-        </div>
+        </NavLink>
     )
 }
 
