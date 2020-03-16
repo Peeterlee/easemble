@@ -3,9 +3,12 @@ import { Link } from 'react-router-dom';
 import CheckIcon from '@material-ui/icons/Check';
 import Switch from '@material-ui/core/Switch';
 import Logo from '../../comps/Logo';
+import TermsPopup from '../../comps/TermsPopup';
 
 function Pricing_Home(){
+    
 
+    const [termsPopup, setTermsPopup] = useState('none');
     const [checked, Setchecked] = useState(false);
 
     var MonthlyColor, AnnuallyColor, StandardPrice, TeamPrice, SavePlanDisplay, cycle;
@@ -28,6 +31,7 @@ function Pricing_Home(){
 
     return(
         <div className="pricing-home-container">
+            <TermsPopup termsPopup={termsPopup} setTermsPopup={setTermsPopup}/>
             <header className="pricing-home-top">
                 <Logo color="#D78D8C" />
             </header>
@@ -100,7 +104,7 @@ function Pricing_Home(){
             </main>
             <footer>
                 <div><font color={MonthlyColor}>MONTHLY</font><Switch checked={checked} onChange={()=>{Setchecked(!checked)}} color="default" /> <font color={AnnuallyColor}>ANNUALLY</font> <span style={{color:"#00E492",marginLeft:"10px"}}>(15% Discount)</span></div>
-                <div style={{marginTop:"30px"}}>Learn more about our <span style={{fontFamily:"TT Commons Bold"}}>Terms & Conditions</span></div>
+                <div style={{marginTop:"30px"}}>Learn more about our <span style={{fontFamily:"TT Commons Bold", cursor:"pointer"}} onClick={()=>{setTermsPopup("flex")}}>Terms & Conditions</span></div>
             </footer>
         </div>
     )

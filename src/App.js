@@ -30,7 +30,6 @@ function App() {
           <Route exact={true} path ="/" render={()=>{ return (<Dashboard setPostPopupDisplay={setPostPopupDisplay} postPopupDisplay={postPopupDisplay} /> )}} />
           <Route path ="/hashtags" render={()=>{ return (<Hashtags setPostPopupDisplay={setPostPopupDisplay} postPopupDisplay={postPopupDisplay} /> )}} />
           <Route path ="/tagged" render={()=>{ return (<Tagged setPostPopupDisplay={setPostPopupDisplay} postPopupDisplay={postPopupDisplay} /> )}} />
-          {/* <Route  path ="/test" render={()=>{ alert("Nope")}} /> */}
         </Switch>
       </Router>
     </div>
