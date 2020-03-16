@@ -1,7 +1,8 @@
 import {createStore} from 'redux';
 
 const initialState = {
-    hashtag_amount:0
+    hashtag_amount:0,
+    tier:'starter'
 }
 
 export default createStore(function(state=initialState, action){
@@ -17,6 +18,13 @@ export default createStore(function(state=initialState, action){
             return {
                 ...state,
                 hashtag_amount:state.hashtag_amount - 1
+            }
+        }
+
+        case 'tier':{
+            return {
+                ...state,
+                tier:action.tier
             }
         }
         default:

@@ -13,13 +13,13 @@ import LimitMessage from '../../comps/LimitMessage';
 import Spacer from '../../comps/Spacer';
 import TopBar from '../../comps/TopBar';
 import Popup from '../../comps/Popup';
+import {connect} from 'react-redux';
 
-function Hashtags({hashtagTitle, postPopupDisplay, setPostPopupDisplay}) {
 
-    var tier = "starter";
+function Hashtags({hashtagTitle, postPopupDisplay, setPostPopupDisplay, tier}) {
     
     var TopBarPopup = (<TopBar/>);
-
+    console.log(tier);
 
     function CheckTier(){
         if (tier === "starter"){
@@ -84,4 +84,10 @@ Hashtags.defaultProps = {
     hashtagTitle:"#lovenote"
 }
 
-export default Hashtags;
+const mapStateToProps = state => {
+    return {
+        tier:state.tier
+    }
+  }
+
+export default connect(mapStateToProps)(Hashtags);

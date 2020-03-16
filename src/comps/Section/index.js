@@ -11,10 +11,9 @@ import {HashtagPostData} from '../../data/HashtagPostData'
 import {ScheduledPostData} from '../../data/ScheduledPostData';
 import {TaggedPostData} from '../../data/TaggedPostData';
 import LimitMessage from '../LimitMessage';
+import {connect} from 'react-redux';
 
-function Section({sectionType, buttonTitle, postPopupDisplay, setPostPopupDisplay}){
-
-var tier = "starter";
+function Section({sectionType, buttonTitle, postPopupDisplay, setPostPopupDisplay, tier}){
 
 var buttonTitle = "View All"
 var postClass = "PostsContainer";
@@ -115,4 +114,10 @@ Section.defaultProps = {
   sectionType:"Hashtags",
 };
 
-export default Section;
+const mapStateToProps = state => {
+  return {
+      tier:state.tier
+  }
+}
+
+export default connect(mapStateToProps)(Section);

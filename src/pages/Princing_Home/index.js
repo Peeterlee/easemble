@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-
+import { Link } from 'react-router-dom';
 import CheckIcon from '@material-ui/icons/Check';
 import Switch from '@material-ui/core/Switch';
 import Logo from '../../comps/Logo';
@@ -8,20 +8,22 @@ function Pricing_Home(){
 
     const [checked, Setchecked] = useState(false);
 
-    var MonthlyColor, AnnuallyColor, StandardPrice, TeamPrice, SavePlanDisplay;
+    var MonthlyColor, AnnuallyColor, StandardPrice, TeamPrice, SavePlanDisplay, cycle;
 
     if(checked){
         AnnuallyColor = "black";
         MonthlyColor = "#B8B8B8";
         StandardPrice = "16";
-        TeamPrice = "40"
-        SavePlanDisplay = "block"
+        TeamPrice = "40";
+        SavePlanDisplay = "block";
+        cycle = "Annually";
     }else{
         AnnuallyColor = "#B8B8B8";
         MonthlyColor = "black";
         StandardPrice = "19";
-        TeamPrice = "48"
-        SavePlanDisplay = "none"
+        TeamPrice = "48";
+        SavePlanDisplay = "none";
+        cycle = "Monthly";
     }
 
     return(
@@ -42,7 +44,7 @@ function Pricing_Home(){
                             <li className="plan-limits"><CheckIcon className="checkIcon" /> Planner/Instant Posts</li>
                             <li className="plan-limits"><CheckIcon className="checkIcon" /> 24/7 Customer Service Support</li>
                         </ul>
-                        <button className="plan-buttons">Create Account</button>
+                        <button className="plan-buttons" style={{position:'absolute',bottom:'20px'}}>Create Account</button>
                     </article>
                     <article className="pricing-home-bottom-plans">
                         <div className="plan-popular">MOST POPULAR</div>
@@ -58,7 +60,16 @@ function Pricing_Home(){
                             <li className="plan-limits"><CheckIcon className="checkIcon" /> 24/7 Customer Service Support</li>
                             <li className="plan-limits"><CheckIcon className="checkIcon" /> Image/Story Post Templates</li>
                         </ul>
-                        <button className="plan-buttons">Select Standard</button>
+                        <Link style={{position:'absolute', bottom:'20px'}} to={{
+                            pathname:'/payment',
+                            props:{
+                                plan:'standard',
+                                cycle:cycle,
+                                cyclePrice:StandardPrice
+                            }
+                        }} >
+                            <button className="plan-buttons">Select Standard</button>
+                        </Link>
                     </article>
                     <article className="pricing-home-bottom-plans">
                         <header>TEAM</header>
@@ -74,7 +85,16 @@ function Pricing_Home(){
                             <li className="plan-limits"><CheckIcon className="checkIcon" /> Image/Story Post Templates</li>
                             <li className="plan-limits"><CheckIcon className="checkIcon" /> Unlimited Administrators</li>
                         </ul>
-                        <button className="plan-buttons">Select Team</button>
+                        <Link style={{position:'absolute', bottom:'20px'}} to={{
+                            pathname:'/payment',
+                            props:{
+                                plan:'team',
+                                cycle:cycle,
+                                cyclePrice:TeamPrice
+                            }
+                        }} >
+                            <button className="plan-buttons">Select Team</button>
+                        </Link>
                     </article>
                 </section>
             </main>

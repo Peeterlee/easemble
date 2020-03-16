@@ -6,6 +6,9 @@ import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import standardImg from '../../assets/artwork/standard.svg';
 import teamImg from '../../assets/artwork/team.svg';
+import { Link } from 'react-router-dom';
+import {connect} from 'react-redux';
+import {ChangeTier} from '../../redux/actions';
 
 import {loadStripe} from '@stripe/stripe-js';
 import {Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
@@ -22,29 +25,33 @@ var style = {
 
 const Billing_Cycle = ({price, cycle, SaveDisplay, cycleChecked, SetcycleChecked, SetcyclePrice}) => {
 
-    var checkIcon;
+    var checkIcon, saveColor, fontColor;
     if(cycleChecked === cycle){
         checkIcon =  <CheckCircleIcon className="cycle checked" />;
+        saveColor = '#10CF8B';
+        fontColor = 'black'
     }else{
         checkIcon = <RadioButtonUncheckedIcon className="cycle unchecked" onClick={()=>{
             SetcycleChecked(cycle);
             SetcyclePrice(price);
         }} />
+        saveColor = '#D9D9D9';
+        fontColor = '#939393';
     }
 
     return (
         <div className="bill-cycle-container">
-            <h5>Billed {cycle}</h5>
-            <div className="save-container" style={{display:SaveDisplay}}>
+            <h5 style={{color:fontColor}}>Billed {cycle}</h5>
+            <div className="save-container" style={{display:SaveDisplay,backgroundColor:saveColor}}>
                 Save 15%
             </div>
             {checkIcon} 
-            <div style={{display:'inline-block', marginLeft:'40px'}}><div className="plan-price"><font className="plan-price-dollar">$</font><font className="plan-price-number">{price}<font className="plan-price-month">/mo</font></font></div></div>                              
+            <div style={{display:'inline-block', marginLeft:'40px',color:fontColor}}><div className="plan-price"><font className="plan-price-dollar">$</font><font className="plan-price-number">{price}<font className="plan-price-month">/mo</font></font></div></div>                              
         </div>
     )
 }
 
-function StripForm({cyclePrice}){
+function StripForm({cyclePrice, plan},props){
 
     const stripe = useStripe();
     const elements = useElements();
@@ -61,8 +68,7 @@ function StripForm({cyclePrice}){
             console.log(error);
         } else {
             console.log("payment", paymentMethod);
-
-       
+            props.ChangeTier(plan);
 
         /* tried using backend code from website but doesn't work.
 
@@ -115,16 +121,17 @@ function StripForm({cyclePrice}){
 const stripePromise = loadStripe('pk_test_M4w7UVEd0KgtgV3OCSARBX0Z00HYYRcdRV');
 
 
-function Pricing_Creaditcard({a_price, m_price}){
+function Pricing_Creaditcard(props){
 
-    const [cyclePrice, SetcyclePrice] = useState();
-    const [cycleChecked, SetcycleChecked] = useState('a');
+    const [cyclePrice, SetcyclePrice] = useState(props.location.props.cyclePrice);
+    const [cycleChecked, SetcycleChecked] = useState(props.location.props.cycle);
 
-    var plan = "team";
-    var planName, planDetails, planDesc, planImg;
+    var planName, planDetails, planDesc, planImg, price1, price2;
 
-    if(plan === "standard"){
+    if(props.location.props.plan === "standard"){
         planName = "Standard";
+        price1 = 16;
+        price2 = 19;
         planDetails = (
             <div className="pricing-credit-plan-details">
                 <ul className="plan-detail-container" style={{marginRight:"20px"}}>
@@ -142,8 +149,10 @@ function Pricing_Creaditcard({a_price, m_price}){
             <div className="pricing-credit-plan"><h1><div>{planName}</div>&nbsp; |</h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>For small and medium<br/>sized businesses</span></div>
         )
         planImg = standardImg;
-    }else if(plan === "team"){
+    }else if(props.location.props.plan === "team"){
         planName = "Team";
+        price1 = 40;
+        price2 = 48;
         planDetails = (
             <div className="pricing-credit-plan-details">
                 <ul className="plan-detail-container" style={{marginRight:"20px"}}>
@@ -180,18 +189,18 @@ function Pricing_Creaditcard({a_price, m_price}){
                 </footer>
             </div>
             <div className="pricing-credit-right">
-                <div className="view-all-container"><span><ChevronLeftIcon /> View all plans</span></div>
+                <div className="view-all-container"><Link style={{textDecoration:'none',textDecorationColor:'none'}} to={'/plans'}><span><ChevronLeftIcon /> View all plans</span></Link></div>
                 <header><h1>Payment Information</h1></header>
                 <main>
                     <div>
                         <label><h4>Billing Cycle *</h4></label>
                         <div className="bill-cycle-wrapper">
-                            <Billing_Cycle price="16" cycle="Annually" SaveDisplay="block" SetcyclePrice={SetcyclePrice} cycleChecked={cycleChecked} SetcycleChecked={SetcycleChecked} />
-                            <Billing_Cycle price="19" cycle="Monthly" SaveDisplay="none" SetcyclePrice={SetcyclePrice} cycleChecked={cycleChecked} SetcycleChecked={SetcycleChecked} />
+                            <Billing_Cycle price={price1} cycle="Annually" SaveDisplay="block" SetcyclePrice={SetcyclePrice} cycleChecked={cycleChecked} SetcycleChecked={SetcycleChecked} />
+                            <Billing_Cycle price={price2} cycle="Monthly" SaveDisplay="none" SetcyclePrice={SetcyclePrice} cycleChecked={cycleChecked} SetcycleChecked={SetcycleChecked} />
                         </div>
                         
                         <Elements stripe={stripePromise}>
-                            <StripForm cyclePrice={cyclePrice} />
+                            <StripForm cyclePrice={cyclePrice} plan={props.location.props.plan} />
                         </Elements>                       
                     </div>
                 </main>
@@ -208,4 +217,4 @@ function Pricing_Creaditcard({a_price, m_price}){
     )
 }
 
-    export default Pricing_Creaditcard;
+    export default connect(null,{ChangeTier})(Pricing_Creaditcard);
