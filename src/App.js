@@ -21,7 +21,7 @@ function App() {
         <Switch>
           <Route path="/onboarding" component={SignUp_Hashtag}/>
           <Route path="/plans" component={Pricing_Home}/>
-          <Route path="/payment" component={Pricing_Creditcard}/>
+          <Route exact={true} path ="/payment" render={(props)=>{ return (<Pricing_Creditcard {...props} /> )}} />
 
           {/* Dashboard Pages */}
           {/* <Route exact={true} path="/" component={Dashboard} /> */}
