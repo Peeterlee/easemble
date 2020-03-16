@@ -5,7 +5,9 @@ import searchIcon from '../../assets/Icons/search.svg';
 function InputBox({inputType, inputValue, setInputValue, inputName, setLimitContDisp, limitContainerDisplay, width, height, placeholder}){
     console.log(inputValue);
 
-    if (inputValue !== '') {
+    var tier ="starter"
+
+    if (inputValue !== '' && tier === "starter") {
         setLimitContDisp('flex');
     } else if (inputValue === ''){
         setLimitContDisp('none');

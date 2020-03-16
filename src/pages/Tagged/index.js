@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import PageTitle from '../../comps/PageTitle';
 
 import Sidebar from '../../comps/Sidebar';
@@ -13,8 +13,13 @@ import { TaggedPostData } from '../../data/TaggedPostData';
 import LimitMessage from '../../comps/LimitMessage';
 import Spacer from '../../comps/Spacer';
 import SectionTabList from '../../comps/Section/SectionTabList';
+import Popup from '../../comps/Popup';
 
-function Tagged({label}) {
+function Tagged({postPopupDisplay, setPostPopupDisplay}) {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, []);
 
 
     const [showLimit, setShowLimit] = useState(null);
@@ -33,6 +38,8 @@ function Tagged({label}) {
     return (
 
         <div className="dash-container">
+
+            <Popup postPopupDisplay={postPopupDisplay} setPostPopupDisplay={setPostPopupDisplay} />
 
             <div className="sidebar-cont">
             <Sidebar menus={menus}/>
@@ -57,7 +64,7 @@ function Tagged({label}) {
                                 {showLimit}
 
                                 <div className="PostsContainer expanded" style={{display:displayTagged}}> 
-                                    {TaggedPostData.map((o,i)=>{ return <HashtagPost key={i} {...o} /> })}  
+                                    {TaggedPostData.map((o,i)=>{ return <HashtagPost key={i} {...o} setPostPopupDisplay={setPostPopupDisplay} postPopupDisplay={postPopupDisplay} /> })}  
                                 </div>
                             </div>
                     </div>

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../Button';
 import Spacer from '../Spacer';
@@ -7,7 +7,6 @@ import TaggedArt from '../../assets/artwork/tagged.svg';
 import PostsArt from '../../assets/artwork/scheduled.svg';
 
 function LimitMessage({title, atHome, message, popup, inputValue, setInputValue, setLimitContDisp, limitContainerDisplay,type}){
-
     
     var buttonDirection = "row";
     var buttonAlign = "center";

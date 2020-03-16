@@ -15,7 +15,7 @@ function SubMenu({submenu}){
     }
 
     return(
-        <NavLink to={subMenuLink} className="submenu" activeClassName="submenu-active" style={{color:subMenuActiveColor}}>
+        <NavLink to={subMenuLink} className="submenu" activeClassName="submenu-active"  exact={true}>
             {submenu}
         </NavLink>
     )

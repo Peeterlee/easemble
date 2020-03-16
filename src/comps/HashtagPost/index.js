@@ -2,7 +2,7 @@ import React from 'react';
 import UserAvatar from '../UserAvatar';
 import SaveAltIcon from '@material-ui/icons/SaveAlt';
 
-function HashtagPost({className, hashtag_img, tagTitle, user_icon, acc_name, }){
+function HashtagPost({className, hashtag_img, tagTitle, user_icon, acc_name, postPopupDisplay, setPostPopupDisplay}){
     return(
         <div className="HashtagPostCont">
 
@@ -13,7 +13,7 @@ function HashtagPost({className, hashtag_img, tagTitle, user_icon, acc_name, }){
                     <UserAvatar class_name="hashtag_post" acc_name={acc_name} user_icon={user_icon} />
                 </div>
                 <div className="button_cont">
-                    <div className="post_button">View Post</div>
+                    <div className="post_button" onClick={()=>{setPostPopupDisplay("flex")}}>View Post</div>
                 </div>
                 <div className={className}>
                     <p>{tagTitle}</p>

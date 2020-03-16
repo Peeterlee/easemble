@@ -1,7 +1,7 @@
 import React from 'react';
 import CarouselImg from '../../assets/Icons/carousel.svg';
 
-function ScheduledPost({postImg, postTime, isPosted, postDate, postDay, carousel, }){
+function ScheduledPost({postImg, postEdited, isPosted, postDate, postDay, carousel, postPopupDisplay, setPostPopupDisplay}){
     
     var timeStyle = "time_current";
     var carouselClass = "showCarousel";
@@ -25,18 +25,24 @@ function ScheduledPost({postImg, postTime, isPosted, postDate, postDay, carousel
                 <img alt="scheduled-post-img" src={postImg} />
             </div>
             <div className="time_cont">
-                <p className={timeStyle}>{postTime}</p>
+                <p className={timeStyle}> <span className="lastEdited">Last Edited: </span>{postEdited}</p>
             </div>
             
 
             <div className="sched_overlay">
-                <div className="dateCont">
+                {/* <div className="dateCont">
                     <p className="p_day">{postDay}</p>
                     <p className="p_date">{postDate}</p>
+                 
                 </div>
                 <div className="carouselCont">
                     <img src={CarouselImg} className={carouselClass} alt="carousel"></img>
-                </div>
+                </div> */}
+
+                <div className="button_cont">
+                        <div className="post_button" onClick={()=>{setPostPopupDisplay("flex")}}>View Post</div>
+                    </div>
+
             </div>
 
         </div>
@@ -48,7 +54,7 @@ function ScheduledPost({postImg, postTime, isPosted, postDate, postDay, carousel
 
 ScheduledPost.defaultProps = {
     carousel:false,
-    postTime:'11:30 AM',
+    postEdited:'11:30 AM',
     isPosted:false,
     postImg:'https://www.okea.org/wp-content/uploads/2019/10/placeholder.png',
     postDate:'January 27, 2020',

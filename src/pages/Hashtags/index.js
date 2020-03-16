@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import PageTitle from '../../comps/PageTitle';
 
 import InputBox from '../../comps/InputBox';
@@ -12,8 +12,29 @@ import { HashtagPostData } from '../../data/HashtagPostData';
 import LimitMessage from '../../comps/LimitMessage';
 import Spacer from '../../comps/Spacer';
 import TopBar from '../../comps/TopBar';
+import Popup from '../../comps/Popup';
 
-function Hashtags({hashtagTitle}) {
+function Hashtags({hashtagTitle, postPopupDisplay, setPostPopupDisplay}) {
+
+    var tier = "starter";
+    
+    var TopBarPopup = (<TopBar/>);
+
+
+    function CheckTier(){
+        if (tier === "starter"){
+            TopBarPopup = (<TopBar />);
+    
+        } else if ( tier === "standard" || tier === "team") {
+            TopBarPopup = null;
+        }
+    }
+
+    CheckTier();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
     
     const [limitContainerDisplay, setLimitContDisp] = useState("none");
     const [inputValue, setInputValue] = useState('');
@@ -22,13 +43,15 @@ function Hashtags({hashtagTitle}) {
     return (
 
         <div className="dash-container">
+            <Popup setPostPopupDisplay={setPostPopupDisplay} postPopupDisplay={postPopupDisplay} />
 
             <div className="sidebar-cont">
             <Sidebar menus={menus}/>
             </div>
                 
             <div className="dash-main-container dash-s-container">
-                <TopBar />
+
+                { TopBarPopup }
 
                 <div className="dash-header">
                     <PageTitle title="Hashtags" />
@@ -47,7 +70,7 @@ function Hashtags({hashtagTitle}) {
 
                         <div className="dash-content-container">
                             <div className="PostsContainer expanded"> 
-                                {HashtagPostData.map((o,i)=>{ return <HashtagPost key={i} {...o} /> })}  
+                                {HashtagPostData.map((o,i)=>{ return <HashtagPost key={i} {...o} postPopupDisplay={postPopupDisplay} setPostPopupDisplay={setPostPopupDisplay}/> })}  
                             </div>
                         </div>
                 </div>

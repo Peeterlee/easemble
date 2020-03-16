@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {NavLink} from 'react-router-dom';
+import {NavLink, withRouter} from 'react-router-dom';
 
 import ArrowDropUpOutlinedIcon from '@material-ui/icons/ArrowDropUpOutlined';
 import ArrowDropDownOutlinedIcon from '@material-ui/icons/ArrowDropDownOutlined';
@@ -8,7 +8,7 @@ import SubMenu from './SubMenu';
 //default icon
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 
-function Menu({menu, icon, submenus}){
+function Menu({menu, icon, submenus, menuId}){
 
     const [active, Setactive] = useState(false);
 
@@ -35,19 +35,25 @@ function Menu({menu, icon, submenus}){
         Setactive(!active);
     }
 
+    var menuActiveClass = "menu-active";
+
+    if (menu === "Home" || menu === "Hashtags" || menu === "Tagged") {
+        menuActiveClass = "menu-active";
+    } else {
+        var menuActiveClass = "menu";
+    }
+
     return(
         <div>
             
-            <div className="menu" onClick={clickMenu}>
-                <div>
+            <NavLink exact to={menuId} className="menu" activeClassName={menuActiveClass} onClick={clickMenu} >
+                <div className="menuLink">
                     {icon}
-                    <NavLink activeClassName="menu-active" className="menuText" to={'/'}>
-                    {menu}
-                    </NavLink>
+                    <p>{menu}</p>
                 </div>
                 
                 {arrow}
-            </div>
+            </NavLink>
             <div>
                 {submenu}
             </div>
@@ -57,8 +63,9 @@ function Menu({menu, icon, submenus}){
 
 Menu.defaultProps = {
     menu:"Default Menu",
+    menuId:"/",
     icon:<HelpOutlineIcon />,
     submenus:["default sub menu", "default sub menu"]
 }
 
-export default Menu;
+export default withRouter(Menu);
