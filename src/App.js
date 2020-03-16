@@ -22,15 +22,9 @@ function App() {
           <Route path="/onboarding" component={SignUp_Hashtag}/>
           <Route path="/plans" component={Pricing_Home}/>
           <Route path="/payment" component={Pricing_Creditcard}/>
-
-          {/* Dashboard Pages */}
-          {/* <Route exact={true} path="/" component={Dashboard} /> */}
-          {/* <Route path="/hashtags"  component={Hashtags} />
-          <Route path="/tagged"  component={Tagged} /> */}
           <Route exact={true} path ="/" render={()=>{ return (<Dashboard setPostPopupDisplay={setPostPopupDisplay} postPopupDisplay={postPopupDisplay} /> )}} />
           <Route path ="/hashtags" render={()=>{ return (<Hashtags setPostPopupDisplay={setPostPopupDisplay} postPopupDisplay={postPopupDisplay} /> )}} />
           <Route path ="/tagged" render={()=>{ return (<Tagged setPostPopupDisplay={setPostPopupDisplay} postPopupDisplay={postPopupDisplay} /> )}} />
-          {/* <Route  path ="/test" render={()=>{ alert("Nope")}} /> */}
         </Switch>
       </Router>
     </div>
