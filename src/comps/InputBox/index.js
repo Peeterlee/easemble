@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
+import {connect} from 'react-redux';
 import searchIcon from '../../assets/Icons/search.svg';
 
 
-function InputBox({inputType, inputValue, setInputValue, inputName, setLimitContDisp, limitContainerDisplay, width, height, placeholder}){
+function InputBox({inputType, inputValue, setInputValue, inputName, setLimitContDisp, limitContainerDisplay, width, height, placeholder, tier}){
     console.log(inputValue);
-
-    var tier ="starter"
 
     if (inputValue !== '' && tier === "starter") {
         setLimitContDisp('flex');
@@ -29,4 +28,10 @@ InputBox.defaultProps = {
     height:'45px'
 }
 
-export default InputBox;
+const mapStateToProps = state => {
+    return {
+        tier:state.tier
+    }
+}
+
+export default connect(mapStateToProps)(InputBox);

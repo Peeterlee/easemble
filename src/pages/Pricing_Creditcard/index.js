@@ -4,8 +4,15 @@ import CheckIcon from '@material-ui/icons/Check';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import LockIcon from '@material-ui/icons/Lock';
 import standardImg from '../../assets/artwork/standard.svg';
 import teamImg from '../../assets/artwork/team.svg';
+import { Link } from 'react-router-dom';
+import {connect} from 'react-redux';
+import {ChangeTier} from '../../redux/actions';
+import Checkbox from '@material-ui/core/Checkbox';
+import TermsPopup from '../../comps/TermsPopup';
+
 
 import {loadStripe} from '@stripe/stripe-js';
 import {Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
@@ -22,29 +29,33 @@ var style = {
 
 const Billing_Cycle = ({price, cycle, SaveDisplay, cycleChecked, SetcycleChecked, SetcyclePrice}) => {
 
-    var checkIcon;
+    var checkIcon, saveColor, fontColor;
     if(cycleChecked === cycle){
         checkIcon =  <CheckCircleIcon className="cycle checked" />;
+        saveColor = '#10CF8B';
+        fontColor = 'black'
     }else{
         checkIcon = <RadioButtonUncheckedIcon className="cycle unchecked" onClick={()=>{
             SetcycleChecked(cycle);
             SetcyclePrice(price);
         }} />
+        saveColor = '#D9D9D9';
+        fontColor = '#939393';
     }
 
     return (
         <div className="bill-cycle-container">
-            <h5>Billed {cycle}</h5>
-            <div className="save-container" style={{display:SaveDisplay}}>
+            <h5 style={{color:fontColor}}>Billed {cycle}</h5>
+            <div className="save-container" style={{display:SaveDisplay,backgroundColor:saveColor}}>
                 Save 15%
             </div>
             {checkIcon} 
-            <div style={{display:'inline-block', marginLeft:'40px'}}><div className="plan-price"><font className="plan-price-dollar">$</font><font className="plan-price-number">{price}<font className="plan-price-month">/mo</font></font></div></div>                              
+            <div style={{display:'inline-block', marginLeft:'40px',color:fontColor}}><div className="plan-price"><font className="plan-price-dollar">$</font><font className="plan-price-number">{price}<font className="plan-price-month">/mo</font></font></div></div>                              
         </div>
     )
 }
 
-function StripForm({cyclePrice}){
+function StripForm({cyclePrice, SetshowContent}){
 
     const stripe = useStripe();
     const elements = useElements();
@@ -61,8 +72,7 @@ function StripForm({cyclePrice}){
             console.log(error);
         } else {
             console.log("payment", paymentMethod);
-
-       
+            SetshowContent('review');
 
         /* tried using backend code from website but doesn't work.
 
@@ -114,17 +124,48 @@ function StripForm({cyclePrice}){
 
 const stripePromise = loadStripe('pk_test_M4w7UVEd0KgtgV3OCSARBX0Z00HYYRcdRV');
 
+function Review_Payment({planName, cycle, price, ChangeTier, SetshowContent}){
+    return(
+        <div className="review-payment">
+            <div className="view-all-container"><span><ChevronLeftIcon onClick={()=>{SetshowContent('payment')}} />Back to Payment</span></div>
+            <header style={{marginBottom:'50px'}}><h1>Review Order</h1></header>
+            <section>
+                <h2>Plan Summary</h2>
+                <div className="rows"><font>{planName} Plan ({cycle})</font><font>${price}.00</font></div>
+                <hr />
+                <div className="rows"><font>Total</font><font>${price}.00</font></div>
+                <hr />
+                <div className="all-prices">* All prices are in CAD</div>
+                <Link to={'/'}>
+                    <button onClick={()=>{
+                        ChangeTier(planName);
+                    }}>Confirm Subscription</button>
+                </Link>
+                <div style={{textAlign:"center", justifyContent:"center", display:'flex', color:'#6C6C6C', padding:'20px 0'}}><LockIcon style={{fontSize:'14px'}} /> All payments are secure and encrypted</div>
+                <p>
+                    By placing your order, you agree to Esemble's <span>terms and conditions.</span><br/><br/>
+                    When you click the "Confirm Subscription" button, we will send you an e-mail acknowleding receipt of your order. By placing your order, you agree to Easemble.com's terms and conditions of use.<br/><br/>
+                    Whithin 14 days of your free trial, you can cancel your Subscription at any time. Exceptinos and restrctions apply.
+                </p>
+            </section>
+        </div>
+    )
+}
 
-function Pricing_Creaditcard({a_price, m_price}){
 
-    const [cyclePrice, SetcyclePrice] = useState();
-    const [cycleChecked, SetcycleChecked] = useState('a');
+function Pricing_Creaditcard(props){
 
-    var plan = "team";
-    var planName, planDetails, planDesc, planImg;
+    const [cyclePrice, SetcyclePrice] = useState(props.location.props.cyclePrice);
+    const [cycleChecked, SetcycleChecked] = useState(props.location.props.cycle);
+    const [termsPopup, setTermsPopup] = useState('none');
+    const [showContent, SetshowContent] = useState('payment')
 
-    if(plan === "standard"){
+    var planName, planDetails, planDesc, planImg, price1, price2, review, payment;
+
+    if(props.location.props.plan === "standard"){
         planName = "Standard";
+        price1 = 16;
+        price2 = 19;
         planDetails = (
             <div className="pricing-credit-plan-details">
                 <ul className="plan-detail-container" style={{marginRight:"20px"}}>
@@ -142,8 +183,10 @@ function Pricing_Creaditcard({a_price, m_price}){
             <div className="pricing-credit-plan"><h1><div>{planName}</div>&nbsp; |</h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>For small and medium<br/>sized businesses</span></div>
         )
         planImg = standardImg;
-    }else if(plan === "team"){
+    }else if(props.location.props.plan === "team"){
         planName = "Team";
+        price1 = 40;
+        price2 = 48;
         planDetails = (
             <div className="pricing-credit-plan-details">
                 <ul className="plan-detail-container" style={{marginRight:"20px"}}>
@@ -164,8 +207,46 @@ function Pricing_Creaditcard({a_price, m_price}){
         planImg = teamImg;
     }
 
+    if(showContent === 'payment'){
+        payment = (
+            <div className="pricing-credit-right">
+                <div className="view-all-container"><Link style={{textDecoration:'none',textDecorationColor:'none'}} to={'/plans'}><span><ChevronLeftIcon /> View all plans</span></Link></div>
+                <header><h1>Payment Information</h1></header>
+                <main>
+                    <div>
+                        <label><h4>Billing Cycle *</h4></label>
+                        <div className="bill-cycle-wrapper">
+                            <Billing_Cycle price={price1} cycle="Annually" SaveDisplay="block" SetcyclePrice={SetcyclePrice} cycleChecked={cycleChecked} SetcycleChecked={SetcycleChecked} />
+                            <Billing_Cycle price={price2} cycle="Monthly" SaveDisplay="none" SetcyclePrice={SetcyclePrice} cycleChecked={cycleChecked} SetcycleChecked={SetcycleChecked} />
+                        </div>
+                        
+                        <Elements stripe={stripePromise}>
+                            <StripForm cyclePrice={cyclePrice} plan={props.location.props.plan} SetshowContent={SetshowContent} />
+                        </Elements>                       
+                    </div>
+                </main>
+                <footer>
+                    <hr style={{marginBottom:'15px'}} />
+                    <div>
+                        <span className="total-billed">Total Billed</span><span className="total-price">$ {cyclePrice}*</span>
+                    </div>
+                    <p>*Pluse applicable taxes</p>
+                    <hr style={{marginTop:'15px'}} />
+                    <div><Checkbox color="default" onClick={()=>{setTermsPopup("flex")}} /> I have read and agree to the <span style={{color:'#2AC3D8', fontWeight:'bold'}} onClick={()=>{setTermsPopup("flex")}}>Terms and Conditions</span></div> 
+                </footer>
+            </div>
+        )
+    }else if(showContent === 'review'){
+        review = (
+            <div className="pricing-credit-right">
+                <Review_Payment planName={planName} cycle={cycleChecked} price={cyclePrice} ChangeTier={props.ChangeTier} SetshowContent={SetshowContent} />
+            </div>
+        )
+    }
+
     return(
         <div className="pricing-credit-container">
+            <TermsPopup termsPopup={termsPopup} setTermsPopup={setTermsPopup}/>
             <div className="pricing-credit-left">
                 <header>
                     <Logo color="#D78D8C" />
@@ -179,33 +260,10 @@ function Pricing_Creaditcard({a_price, m_price}){
                     <img src={planImg} alt="standardImg" className="plan-img" />
                 </footer>
             </div>
-            <div className="pricing-credit-right">
-                <div className="view-all-container"><span><ChevronLeftIcon /> View all plans</span></div>
-                <header><h1>Payment Information</h1></header>
-                <main>
-                    <div>
-                        <label><h4>Billing Cycle *</h4></label>
-                        <div className="bill-cycle-wrapper">
-                            <Billing_Cycle price="16" cycle="Annually" SaveDisplay="block" SetcyclePrice={SetcyclePrice} cycleChecked={cycleChecked} SetcycleChecked={SetcycleChecked} />
-                            <Billing_Cycle price="19" cycle="Monthly" SaveDisplay="none" SetcyclePrice={SetcyclePrice} cycleChecked={cycleChecked} SetcycleChecked={SetcycleChecked} />
-                        </div>
-                        
-                        <Elements stripe={stripePromise}>
-                            <StripForm cyclePrice={cyclePrice} />
-                        </Elements>                       
-                    </div>
-                </main>
-                <footer>
-                    <hr style={{marginBottom:'15px'}} />
-                    <div>
-                        <span className="total-billed">Total Billed</span><span className="total-price">$ {cyclePrice}*</span>
-                    </div>
-                    <p>*Pluse applicable taxes</p>
-                    <hr style={{marginTop:'15px'}} />
-                </footer>
-            </div>
+            {payment}
+            {review}
         </div>
     )
 }
 
-    export default Pricing_Creaditcard;
+    export default connect(null,{ChangeTier})(Pricing_Creaditcard);

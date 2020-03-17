@@ -4,9 +4,10 @@ import SectionTab from '../Section/SectionTab';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import Button from '../Button';
+import {connect} from 'react-redux';
 import calendarIcon from '../../assets/Icons/calendar_gray.svg';
 
-function Popup({active, img, postPopupDisplay, setPostPopupDisplay }){
+function Popup({active, img, postPopupDisplay, setPostPopupDisplay, tier }){
 
     const [savePopup, SetsavePopup] = useState(false);
     const [selectedTo, SetselectedTo] = useState("general");
@@ -146,5 +147,11 @@ Popup.defaultProps = {
     img: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/img-3462-1-1576693070.jpg?crop=1.00xw:0.803xh;0,0.181xh&resize=640:*',
 
 };
+
+const mapStateToProps = state => {
+    return {
+        tier:state.tier
+    }
+}
 
 export default Popup;
